@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Oil Pulling Protocol — Dr. Painkill</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0e0e0e;
+    --surface: #161616;
+    --surface2: #1e1e1e;
+    --border: #2a2a2a;
+    --text: #e8e8e8;
+    --muted: #888;
+    --accent: #e8e2d0;
+    --red: #c0392b;
+    --green: #1e7a3a;
+    --white: #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--bg);
+    padding: 80px 24px 60px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(232,226,208,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .brand-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--muted);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 10vw, 88px);
+    line-height: 0.95;
+    color: var(--white);
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+  }
+  .hero h1 span {
+    color: var(--accent);
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+  }
+  .hero-sub {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 480px;
+    margin: 0 auto 36px;
+    font-weight: 300;
+  }
+  .study-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 8px 16px;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+  .study-badge strong { color: var(--accent); }
+
+  /* ── STATS ROW ── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid var(--border);
+  }
+  .stat {
+    padding: 28px 16px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--white);
+    line-height: 1;
+    display: block;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    margin-top: 4px;
+    text-transform: uppercase;
+  }
+
+  /* ── CONTAINER ── */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ── ARROW ── */
+  .arrow-divider {
+    text-align: center;
+    padding: 12px 0;
+  }
+  .arrow-divider img {
+    width: 52px;
+    opacity: 0.35;
+    filter: invert(1);
+  }
+
+  /* ── SECTION ── */
+  .section {
+    padding: 64px 0 48px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(34px, 6vw, 52px);
+    color: var(--white);
+    line-height: 1.0;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+  }
+  .section h2 em {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    color: var(--accent);
+  }
+  p {
+    color: #aaa;
+    margin-bottom: 16px;
+    font-size: 15.5px;
+  }
+  p strong { color: var(--text); }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    margin: 28px 0;
+    background: var(--surface);
+  }
+  .pull-quote p {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--accent);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ── CHECK LIST ── */
+  .check-list {
+    list-style: none;
+    margin: 20px 0;
+  }
+  .check-list li {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    color: #bbb;
+    align-items: flex-start;
+  }
+  .check-list li:last-child { border-bottom: none; }
+  .check-list li::before {
+    content: '✓';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ── SCIENCE TABLE ── */
+  .science-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+  }
+  .science-table th {
+    background: var(--surface2);
+    color: var(--muted);
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-bottom: 1px solid var(--border);
+  }
+  .science-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    color: #bbb;
+    vertical-align: top;
+  }
+  .science-table tr:last-child td { border-bottom: none; }
+  .science-table td:first-child { color: var(--text); font-weight: 500; }
+  .science-table td:nth-child(2) { color: var(--accent); font-weight: 600; width: 70px; }
+
+  /* ── BACTERIA TABLE ── */
+  .bact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 24px 0;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .bact-col {
+    background: var(--surface);
+  }
+  .bact-header {
+    padding: 12px 16px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .bact-header.bad { background: #2a0a0a; color: #e05555; }
+  .bact-header.good { background: #0a1e0a; color: #4caf50; }
+  .bact-item {
+    padding: 10px 16px;
+    border-top: 1px solid var(--border);
+    font-size: 13.5px;
+  }
+  .bact-item strong { display: block; color: var(--text); font-size: 13px; }
+  .bact-item span { color: var(--muted); font-size: 12px; }
+
+  /* ── PROTOCOL STEPS ── */
+  .steps {
+    margin: 24px 0;
+    counter-reset: steps;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    width: 40px;
+    height: 40px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .step-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 4px;
+    letter-spacing: 0.3px;
+  }
+  .step-desc {
+    font-size: 14.5px;
+    color: #999;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── MISTAKES ── */
+  .mistake {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .mistake:last-child { border-bottom: none; }
+  .mistake-x {
+    color: var(--red);
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .mistake-title {
+    font-weight: 600;
+    color: #e05555;
+    font-size: 14.5px;
+    margin-bottom: 3px;
+  }
+  .mistake-desc {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    padding: 48px 24px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  .footer p {
+    color: var(--muted);
+    font-size: 13px;
+    max-width: 480px;
+    margin: 0 auto 12px;
+    text-align: center;
+  }
+  .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--white);
+    display: block;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .stat { border-bottom: 1px solid var(--border); }
+    .bact-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="brand-label">Dr. Painkill</span>
+  <h1>The Oil Pulling<br/><span>Protocol</span></h1>
+  <p class="hero-sub">The free guide your dentist doesn't want you to read. Based on a published clinical study.</p>
+  <div class="study-badge">
+    <strong>PEER-REVIEWED</strong> &nbsp;Journal of Clinical Oral Investigations, 2026
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><span class="stat-num">1</span><span class="stat-label">Clinical Study</span></div>
+  <div class="stat"><span class="stat-num">10</span><span class="stat-label">Minutes a Day</span></div>
+  <div class="stat"><span class="stat-num">30</span><span class="stat-label">Day Protocol</span></div>
+  <div class="stat"><span class="stat-num">FREE</span><span class="stat-label">Cost to You</span></div>
+</div>
+
+<div class="container">
+
+  <!-- SECTION 1: THE STUDY -->
+  <div class="section">
+    <p class="section-label">The Study</p>
+    <h2>Your mouthwash is <em>nuking</em> your mouth.</h2>
+
+    <p>A clinical study published in the <strong>Journal of Clinical Oral Investigations (2026)</strong> compared coconut oil pulling directly against chlorhexidine — the active ingredient in most prescription mouthwashes — in patients with active gum disease.</p>
+
+    <p>Chlorhexidine is what your dentist recommends. It kills bacteria. <strong>All of them.</strong> The bad ones, the good ones, everything living in your mouth gets scorched. No survivors.</p>
+
+    <div class="pull-quote">
+      <p>"Coconut oil did the opposite. And it won."</p>
+    </div>
+
+    <ul class="check-list">
+      <li>Killed every major gum disease pathogen tested</li>
+      <li>Actively increased protective bacteria — chlorhexidine destroyed them</li>
+      <li>Maintained microbiome diversity — the standard treatment collapsed it</li>
+      <li>Outperformed the clinical gold standard on every gum health measure</li>
+    </ul>
+  </div>
+
+  <div class="arrow-divider"><img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAGoBH8DASIAAhEBAxEB/8QAHQABAAEEAwEAAAAAAAAAAAAAAAcEBQYIAQIDCf/EADoQAQABAwMCBAUCBAQFBQAAAAABAgMEBQYRByESMUFRCBMiYXGBkRQyQrEWUqHBIzND4fFygpLC8P/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A3LAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAW3cWu6Nt3TqtQ13VMPTcSJ4+bk3qbdMz/ljme9U+kR3n0XJhXW3Z9rfPTbVdBqpp+fXa+bi1TMR4btH1Uzz6RzHE/aQZfj37WRYt5GPdt3rF2iK7dyiqKqa6ZjmJiY84mPV7Qh34TNx5GsdLrWjajF6nUtBu1YV751VVVVVHM1W6uZjtERM0RTzPHy/biEwwDkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEN9POmuubR66bm3FiXsanbWsWprptU1/XF6Zpq48PHlE+PvE/9pkhbde1vSdAw4zda1HF0/GquU24u5F2KKfFPlHM+q4Wq6Ltum5bqiuiqOaaonmJgHYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdZuUR510x+rtExPlIAAAAAAIT+NHB/i+iGXkxHFeDmWL9NUedP1eD9vq/skfpdn16n0527n3J8VeRpmPcqq555qm3HP+qyfELoWo7l6Pbg0bScWvKzr1imbNqnzrmmumriP0ie3+/Ct6K6bqWj9K9uaXrGNVi5+Ng27d61VMTNFUR5Tx68cAzMI8gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB5ZeRZxcevIyLlFq1bpmquuurimmmPOZn0h56nm2NO0/Iz8qvwWMe3VduVe1NMczLWDM/xx8RO5buPj3K9C6eYmRxVciZivL4mfLjmKqvt5U/kE8bK6j7Q3rq2o6ZtrVqc+/p0UzfmiirwTFU8RNNXHFXeOO3+/L16pbd1jdG1bmk6HuLJ0DMuVxMZVmJ708TE0zxMT6xPaeeYenTvY+29iaNGmbc0yziW5iJu3Ip5uXqojjxV1edU/wBvRk8g1un4YsrKr+ZqnU/cGXdnjxVxTMRP71z7R+36RnXRrpJkdPNYy82vemsazYv4/wAmnEyZ4t0zzEzXP1TzV249POfPlK3BwCxb81vM27tLUNa0/R8nWMnFt+OjCx/57veI4jtPlzz5T2ifNgfS/r5svel+nTci7XoWsfy1YedPg8VXtTXPETP2nifslnhHHVfo3s3qHj1XNRwqcPVIjm3qGNEU3Ynt/N/mjt5SCSBF3QrbG/8AaOLnaJuvW7Gs6ZZqiNNvzVVN2KeZ+mfF34495n7JRAABxPYQ38YuuZWh9G79WHfrtXsvMs40TTPEzEzNUx+1Mx+qSdiWsmzsvRLeZcruZFOBZi7VXPNU1eCOeefXkF8CPIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABG/xIb0nY/SrU9Tx7ngzsmn+Ew5iqYmLlfbxRx7U+KfzEAkPxWsi3VEeC5RPNNXlMT7w6YWLjYWPTjYePax7NH8tu1RFNMfiI7Qjn4ZtrZe1Okel42oXb1zMzYnOvRcrmrwTc7xTHPlxHHP35SaDkAAAAAHHCIOsXVLWum++NDr1HRqL2zc6n5ORm0UzN21e7+XE+URxPEx3jnjyTAsu99taVu7bWZoGs49N/EyqJpnmOZonieKqfaqPOJBcNNzsXUcGznYN+3kYt+iLlq7bnmmumfKYlVNcvhy1Dcmwt+5/RzctN+/i2oryNGy5onw1W4mZnvP9NXeY9piYbGg14+LvGzdf1vp/tDHx7tePqGreO/cpomaYiPDT3n7RVVP/hsLaoi3bpopjiKY4iPZxXboq48VNNXHlzHk7gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIF+Jva2vb03psHQ8PS8nK0WM+q7qF61TM0W4iaInxz6fT4+J7ecwnoB0ppimmKaY4iI4h3jyAAAAAAAAkAefyrfzYuzRT46YmIq47xE+f9oY11U3Vj7L2Dq25L8xziWJmzRM9q7s9qKf1qmGUtJeo+yt05fXm707y9w5FWia7qtOocXr0zzTPinxfV5zETVT27cxH6BsN8Mdzc+Z0txdX3VqeTn5mp368u1N6rmbdqqfpiPtPEzEenPslSFNp+JYwMDHwcW3Fuxj2qbVuiPKmmmOIj9oVIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAvio13Vdpbj2HufGycijAx9Qqt5VNF+aKauZpniqI7TzTFXnHun1gnXjZkb76Y6toNuiKsubXz8Pn0v0d6Y/XvT/wC4Gb2L1F6zbvW55prpiqPxL0RZ8MOv6vrnSbAta5hZWNn6XVOn3Jv0eGbkW4iKao9/pmmJ+8SlKAcgAAAAAAtO7dxaTtbb+Xrut5VGLg4tHiuV1T3n2iPeZ9IBX38vHsXbdq9ftW7l2eLdNdcRNc+0R6yhL4tNp6xm6LpG8tr4V3J1vRcqjmLFHiufKmqJ8VMcd5prpp/SZnyhivTDC1rrZ1Up6na1Zv4O2tHvcaNizE0zcqpntP344iap9Z4iPJs8Cg0PJycvRsLLzMevGv3sei5ds1+duqaeZpn8Sr4OCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAedddNETXXVFNMRzNVU8RH5lR6HrOk65hfxujaliahjeKafm412LlPijzjmFXk2beRYrsXqIrt3KZprpnyqiY4mJaybm2VvPoduW/u/ptRkarte/V48/R6qprminjvxHeZiO8xVEcx68wK2gEf9I+q+1upOBVXo965Yz7VEVZOBfji7a9J+1Uc+sfby54SBEiAAA6XrlFq3VcuV00UUxzVVVPERHvMob6l/EJtXbd6dJ25bu7o1yuv5dGPhR4rdFXPHFVcf2pif0BM6MOs/SmrqVquh0524cjE0TBuTcy9Pot8xkzzExPi5jifOO8Tx6eaj6HYHVPI1TUNz7/ANSizjZ9vjG0iaYicb6uYqmImYpnjmPOZn14lLcwCh0jTcLSNNsabpuNaxcPHoi3Zs26eKaKY9FbBw58ga75Oo5+0PjIpsZedkTpm6sGmmzRcuTNFFdNMxERHPb67c8f+tsPDX34wtC1KLW0t56Nh3srL0bU6Irt2aJqqmmqYqpniIn+qnj2+pP2Nc+bYt3Zpmma6Iq4nzjmAeoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALFo+0ds6Pr2Zrul6JhYeo5tPhyL9m3FNVcc8+nvPeffiOXh1Hy904O0czK2Zp2NqOt2/DOPj5Ffhor7xzz3jnt6cwyQkGuWP1Z65YmRRj6n0euXa/FFNVyxFyKJ+/MeKOGX9Jt9dTty7ouY26OntWg6PFmqqnKrqqpqiuJjiOKv5ue/pH59EvALZubRsTcO387RM+bsYudYqsXptV+Cvw1RxPE+jFunXSfZWw7cVaFpVE5cxxVmZH/ABL8+/1T5R9o4Z4SAAAADjg4+61bxvX8bamr5OLcm3fs4N65aqjzpqiiZif3Rx8Ju5NT3R0mt5+rZ+TnZNvNvWfnZFfjrmmOJiPF6+f+3oCXQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHqJkfwuxNdyZ54tadfr7efa3V5fdFXwR2KrPROi5McRf1G/cp9uPpp/8Aqm7KsWsmxXYv26Ltq5TNNdFcc01RPnEx6w8NJ03A0nAt4GmYdjDxbXMW7NiiKKKeZ5niI7eczP6grAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARp8RO+tR2PsSL+iYORlavqN6MLC+XbmqLdyqJnxz6cxx2j1n9QY7ndR9w658RWFsbaN2zVpGm26q9bu/LiqJmI708zHaaeaY7T5zPsmxE/w29Na9h7UrzNYp+ZuPVqoydQuTV4ppmeZijn145mZn1mZSzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIl67dY8LYVNvRNIxo1jdWZEU42DbqmZt+LtFVfEc/inzkGc69vXbOha1p2i6tq2Pi6hqVcUYmPXM+K5VMxEeUdomZ45njuv1dMVceKmJ4nmOY8pQP0P6QanGux1I6mZF3Udz5E/Nx8e9V46cP2+3ij0iO1PonvzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAfW/qlqmo7jjpb02prytfyom3mZlmPFGJHHenn0n3q7xT+fIJvwdU07ULuRawM/GyrmLc+XkU2rkVTar/y1RHlP2la69m7XubujdtzRcSvXKaPlxmVUc1xTxx29Inj18/uxzoX0xweme2a8O3kV5mpZkxc1DJqqni5c79qY9KY57f/ALiQwcgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAs+9Nw4G1dsZ+4NTr8OLhWKrtfExE1ceVMc+szxEfkF0ybfzbNdqappiumaZmnzjn2YH0o6Uba6cxn3dJ/iMrNzrk1XsvKqiu7NMzz4OYiO391D8Om7t1742Zf3HufExsajJyq/4CmzbmjmzHbmeZnnvExz68JOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa7/E7mZ+8d67a6RaTcmIz79GRqNUf02o5nv6doiZ+8zDYhQzpWmzq8avOBizqEWvkxlfKj5sW+efD4/PjnvwDnQtMw9G0fE0rAs02cXEs02bVFMdqaaY4j+ytAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGBdft4ZGxulura/hXKLebRRTaxZqjmPmV1REdvXjvP6Ln0nztY1TpvoGqa9epvall4Nu9frppimKpqjmJ4jtHaY8uEQfG9lV39t7X25b8XzNS1aJ4pn0pp8Pl+bkfs2A03Gt4WnY2HZoii3YtU26aY8oiI4iP9AVIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALJuPa239xZem5et6Vj517TL/AM/DruxzNmvt3j9o7T7R7LyjLqj1MyNmdQtnbdo0u1lY+4MmbF+9NyYrtR4qKYmmI+9XM8+kdkngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACj1nU8HR9Ou6jqeVaxcSzETdvXavDTREzERzP5mHlo+uaNrFmL+k6phZ1qf68e/Tcj94kEDfGNbs4GpbA3Ndm5FOn6vxM0xE8c1W6ojvx/kn1/7bD27kV0U10+VVMVR+JYn1V2BovUbblrRNbuZNqzayaMm3cx6oprpqpiY7TMT2mJmP/C8arqmkbY0KrN1bPtYWBh2oiu9fr4iIiOI7+sz7Au01cd58vWWJaD1C2/r+9s3auiXpz7+n2fmZt+1/yrNXi4pt+LyqqnvPby8M/hql13+JPUdyVZGg7PpuYOi1827+RV9N/Jj7THeimfbzn1454Sp8DW3reB0+1HcXy7tNerZfho+ZPMzbt8xE8+v1TX+wNhwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeOdjWM3EvYmVaovY9+3Vbu2645iumqOJiftMcw0C+IXpvq3Snek5WiZGZa0XNuTcwMm3XVTNqfObUzH9Uek+33fQNjfUnZ2kb62ll7d1mzTXYvxzRXxzVZuRE+Gun7xz/ePUGg+2uuHVDQfDTibszb9un/p5cxfjj2+vmY/dbuqHVPeHUTItV7g1GfkWoiKMSxzRYieP5vBzxNU+sz/pC19Rto6tsXd2bt3WLM03se5MUXePovUeldPvE+f2Y6K6001V1RTTHMzPER68vp10j29TtXptoOgxbiivFwrfzoif+rVHirn/AOUy+f8A0F29/ijq9t3SqqPHanLpv3omOY8Fv66on8xTMfq+lUUxEcQI5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEvxJ9JsfqTtaL2Dbop1/T6aqsK5MxHzOeObdU+08Rx7T+ZfPrMx8jDzL2JlWa7N+zXNFy3XHFVNUdpiY931far/ABjdHqsyzc6hbbxecizRzq1i3T2rop5n50R7xH832iJ9AY78BO3f4rdmt7lu2/owsanHs1TH9Vyeapj8RT/q3KhC/wAG23Z0Lovh5V2iacjVb9eZXzzz4Z+mn94p5/VNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADpdtUXbdVu5TTXRXTNNVNUcxMS7gKfTsPG0/Cs4WHZt2MexRFFq3RTxTTTHlEQqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//2Q==" alt=""></div>
+
+  <!-- SECTION 2: HOW IT WORKS -->
+  <div class="section">
+    <p class="section-label">The Science</p>
+    <h2>Why coconut oil <em>actually</em> works.</h2>
+
+    <p>Coconut oil is roughly <strong>50% lauric acid</strong> — a medium-chain fatty acid that does something chlorhexidine cannot: it selectively destroys pathogenic bacteria while leaving beneficial ones completely intact.</p>
+
+    <p>Lauric acid disrupts bacterial cell membranes. Pathogenic bacteria — the ones destroying your gums — tend to be gram-negative and lipid-enveloped. These are specifically vulnerable. Commensal bacteria have different membrane structures and are largely spared.</p>
+
+    <div class="pull-quote">
+      <p>"Think of it as a sniper versus a nuke. Chlorhexidine is the nuke. Coconut oil is the sniper."</p>
+    </div>
+
+    <table class="science-table">
+      <thead>
+        <tr><th>Fatty Acid</th><th>Amount</th><th>What It Does</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Lauric acid (C12)</td><td>~50%</td><td>Primary antimicrobial, disrupts pathogen membranes</td></tr>
+        <tr><td>Capric acid (C10)</td><td>~6%</td><td>Secondary antimicrobial effect</td></tr>
+        <tr><td>Caprylic acid (C8)</td><td>~8%</td><td>Antifungal, anti-inflammatory</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="arrow-divider"><img src="data:image/png;base64,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" alt=""></div>
+
+  <!-- SECTION 3: BACTERIA -->
+  <div class="section">
+    <p class="section-label">The Bacteria</p>
+    <h2>What gets <em>killed.</em> What gets protected.</h2>
+
+    <p>This is what separates coconut oil from every other oral care product on the market. It does not spray and pray. It targets.</p>
+
+    <div class="bact-grid">
+      <div class="bact-col">
+        <div class="bact-header bad">✗ Killed by Coconut Oil</div>
+        <div class="bact-item"><strong>Tannerella forsythia</strong><span>Major gum disease pathogen</span></div>
+        <div class="bact-item"><strong>Treponema denticola</strong><span>Destroys gum tissue</span></div>
+        <div class="bact-item"><strong>Prevotella melaninogenica</strong><span>Inflammation-linked</span></div>
+        <div class="bact-item"><strong>Olsenella</strong><span>Found in infected pulp</span></div>
+        <div class="bact-item"><strong>Fretibacterium</strong><span>Emerging periodontitis pathogen</span></div>
+      </div>
+      <div class="bact-col">
+        <div class="bact-header good">✓ Protected by Coconut Oil</div>
+        <div class="bact-item"><strong>Streptococcus mitis</strong><span>Protective, anti-inflammatory</span></div>
+        <div class="bact-item"><strong>Actinomyces</strong><span>Beneficial early colonizer</span></div>
+        <div class="bact-item"><strong>Lachnospiraceae</strong><span>Butyrate-producing, healthy</span></div>
+        <div class="bact-item"><strong>Gemellaceae</strong><span>Commensal, protective</span></div>
+        <div class="bact-item"><strong>Veillonella</strong><span>Lactate-utilizing, protective</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-divider"><img src="data:image/png;base64,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" alt=""></div>
+
+  <!-- SECTION 4: PROTOCOL -->
+  <div class="section">
+    <p class="section-label">The Protocol</p>
+    <h2>How to <em>actually</em> do it.</h2>
+
+    <p>The study used 5ml of coconut oil for 10 minutes per day. Here is exactly how to execute it.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <div class="step-title">Timing — Before anything else</div>
+          <p class="step-desc">Do it first thing in the morning, before eating, drinking, or brushing. Your mouth has been brewing bacteria all night. Pull before you introduce anything else.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <div class="step-title">Amount — One teaspoon</div>
+          <p class="step-desc">Roughly 5ml of coconut oil. Solid at room temperature, it melts within seconds in your mouth. Do not overthink this.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <div class="step-title">Swish — 10 minutes</div>
+          <p class="step-desc">Pull the oil through your teeth and around your gums for 10 minutes. Gentle pulling is enough. Work up to it if your jaw gets tired.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <div class="step-title">Spit — In the trash</div>
+          <p class="step-desc">Never in the sink. Coconut oil solidifies at room temperature and will clog your pipes. Never swallow it either — it has absorbed bacteria from your mouth.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div>
+          <div class="step-title">Brush — After pulling</div>
+          <p class="step-desc">Rinse with warm water, then brush normally. Brushing after removes anything the oil loosened. This order matters.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-divider"><img src="data:image/png;base64,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" alt=""></div>
+
+  <!-- SECTION 5: MISTAKES -->
+  <div class="section">
+    <p class="section-label">Common Mistakes</p>
+    <h2>Do not waste the <em>10 minutes.</em></h2>
+
+    <div class="mistake">
+      <span class="mistake-x">✗</span>
+      <div>
+        <div class="mistake-title">Swallowing the oil</div>
+        <p class="mistake-desc">It has absorbed the bacteria from your mouth. Swallowing it defeats the entire point and can upset your stomach.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <span class="mistake-x">✗</span>
+      <div>
+        <div class="mistake-title">Spitting in the sink</div>
+        <p class="mistake-desc">Coconut oil solidifies at room temperature. Your pipes will hate you within a month.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <span class="mistake-x">✗</span>
+      <div>
+        <div class="mistake-title">Doing it after brushing</div>
+        <p class="mistake-desc">Oil pulling before brushing loosens bacteria so you can flush and brush it away. Reversed order means you are just moving it around.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <span class="mistake-x">✗</span>
+      <div>
+        <div class="mistake-title">Using a different oil</div>
+        <p class="mistake-desc">The clinical evidence is specifically for coconut oil and its lauric acid content. Sesame and sunflower oil lack the same antimicrobial profile.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <span class="mistake-x">✗</span>
+      <div>
+        <div class="mistake-title">Stopping after a week</div>
+        <p class="mistake-desc">The study ran for a full month. Meaningful microbiome changes take time. Give it 30 days before judging results.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>This guide is based on peer-reviewed research. It is not medical advice. If you have active gum disease, see a dentist.</p>
+  <span class="footer-brand">Subscribe to Dr. Painkill.</span>
+</div>
+
+</body>
+</html>
