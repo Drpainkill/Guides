@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Anti-Anxiety Stack — Dr. Painkill</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0e0e0e;
+    --surface: #161616;
+    --surface2: #1e1e1e;
+    --border: #2a2a2a;
+    --text: #e8e8e8;
+    --muted: #888;
+    --accent: #e8e2d0;
+    --red: #c0392b;
+    --green: #1e7a3a;
+    --white: #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--bg);
+    padding: 80px 24px 60px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(232,226,208,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .brand-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--muted);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 9vw, 84px);
+    line-height: 0.95;
+    color: var(--white);
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+  }
+  .hero h1 span {
+    color: var(--accent);
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+  }
+  .hero-sub {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 500px;
+    margin: 0 auto 36px;
+    font-weight: 300;
+  }
+  .study-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 8px 16px;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+  .study-badge strong { color: var(--accent); }
+
+  /* ── STATS ROW ── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid var(--border);
+  }
+  .stat {
+    padding: 28px 16px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--white);
+    line-height: 1;
+    display: block;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    margin-top: 4px;
+    text-transform: uppercase;
+  }
+
+  /* ── CONTAINER ── */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    padding: 64px 0 48px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(34px, 6vw, 52px);
+    color: var(--white);
+    line-height: 1.0;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+  }
+  .section h2 em {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    color: var(--accent);
+  }
+  p {
+    color: #aaa;
+    margin-bottom: 16px;
+    font-size: 15.5px;
+  }
+  p strong { color: var(--text); }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    margin: 28px 0;
+    background: var(--surface);
+  }
+  .pull-quote p {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--accent);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ── CHECK LIST ── */
+  .check-list {
+    list-style: none;
+    margin: 20px 0;
+  }
+  .check-list li {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    color: #bbb;
+    align-items: flex-start;
+  }
+  .check-list li:last-child { border-bottom: none; }
+  .check-list li::before {
+    content: '✓';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ── SCIENCE TABLE ── */
+  .science-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+  }
+  .science-table th {
+    background: var(--surface2);
+    color: var(--muted);
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-bottom: 1px solid var(--border);
+  }
+  .science-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    color: #bbb;
+    vertical-align: top;
+  }
+  .science-table tr:last-child td { border-bottom: none; }
+  .science-table td:first-child { color: var(--text); font-weight: 500; }
+
+  /* ── COMPARISON GRID ── */
+  .bact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 24px 0;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .bact-col {
+    background: var(--surface);
+  }
+  .bact-header {
+    padding: 12px 16px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .bact-header.bad { background: #2a0a0a; color: #e05555; }
+  .bact-header.good { background: #0a1e0a; color: #4caf50; }
+  .bact-item {
+    padding: 10px 16px;
+    border-top: 1px solid var(--border);
+    font-size: 13.5px;
+  }
+  .bact-item strong { display: block; color: var(--text); font-size: 13px; }
+  .bact-item span { color: var(--muted); font-size: 12px; }
+
+  /* ── PROTOCOL STEPS ── */
+  .steps {
+    margin: 24px 0;
+    counter-reset: steps;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    width: 40px;
+    height: 40px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .step-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 4px;
+    letter-spacing: 0.3px;
+  }
+  .step-desc {
+    font-size: 14.5px;
+    color: #999;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── STACK CARDS ── */
+  .stack-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+  .stack-card-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .stack-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--white);
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+  .stack-card h3 em {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    color: var(--accent);
+  }
+  .stack-card-dose {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .stack-card p {
+    font-size: 14.5px;
+    color: #999;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* ── MISTAKES ── */
+  .mistake {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .mistake:last-child { border-bottom: none; }
+  .mistake-x {
+    color: var(--red);
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .mistake-title {
+    font-weight: 600;
+    color: #e05555;
+    font-size: 14.5px;
+    margin-bottom: 3px;
+  }
+  .mistake-desc {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+  }
+
+  /* ── BREATHING DIAGRAM ── */
+  .breath-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin: 32px 0;
+    padding: 32px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    overflow-x: auto;
+  }
+  .breath-phase {
+    text-align: center;
+    min-width: 80px;
+    flex: 1;
+  }
+  .breath-circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    margin: 0 auto 8px;
+  }
+  .breath-circle.inhale { background: rgba(78,167,116,0.15); color: #4caf50; border: 2px solid #4caf50; }
+  .breath-circle.hold { background: rgba(232,226,208,0.1); color: var(--accent); border: 2px solid var(--accent); }
+  .breath-circle.exhale { background: rgba(100,149,237,0.12); color: #6495ed; border: 2px solid #6495ed; }
+  .breath-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .breath-arrow {
+    color: var(--border);
+    font-size: 20px;
+    margin: 0 4px;
+    padding-bottom: 20px;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    padding: 48px 24px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  .footer p {
+    color: var(--muted);
+    font-size: 13px;
+    max-width: 480px;
+    margin: 0 auto 12px;
+    text-align: center;
+  }
+  .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--white);
+    display: block;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .stat { border-bottom: 1px solid var(--border); }
+    .bact-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="brand-label">Dr. Painkill</span>
+  <h1>The Anti-Anxiety<br/><span>Stack</span></h1>
+  <p class="hero-sub">Natural alternatives to propranolol that actually work. No prescription. No brain fog. No dependency.</p>
+  <div class="study-badge">
+    <strong>EVIDENCE-BASED</strong> &nbsp;5 Mechanisms, 0 Prescriptions
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><span class="stat-num">5</span><span class="stat-label">Natural Tools</span></div>
+  <div class="stat"><span class="stat-num">0</span><span class="stat-label">Prescriptions</span></div>
+  <div class="stat"><span class="stat-num">~20</span><span class="stat-label">Min / Day</span></div>
+  <div class="stat"><span class="stat-num">FREE</span><span class="stat-label">Cost to You</span></div>
+</div>
+
+<div class="container">
+
+  <!-- SECTION 1: THE PROBLEM -->
+  <div class="section">
+    <p class="section-label">The Problem</p>
+    <h2>Propranolol is a <em>band-aid</em> on a bullet wound.</h2>
+
+    <p>Propranolol is a beta-blocker. It blocks adrenaline from binding to beta-adrenergic receptors in your heart, blood vessels, and lungs. Your heart rate drops. Tremors stop. You feel <strong>"calm."</strong></p>
+
+    <p>But you are not calm. You have silenced the alarm while the fire is still burning. Propranolol does not reduce the stress signal — it just prevents your body from responding to it. Your brain is still screaming. It just cannot hear the echo anymore.</p>
+
+    <div class="pull-quote">
+      <p>"You are not treating anxiety. You are muting the symptoms while the nervous system stays locked in overdrive."</p>
+    </div>
+
+    <ul class="check-list">
+      <li>Fatigue, brain fog, and cold extremities are common side effects</li>
+      <li>Does not address root cause — sympathetic nervous system dominance</li>
+      <li>Creates psychological dependency: "I can't perform without it"</li>
+      <li>Rebound anxiety when you stop — often worse than the original</li>
+      <li>Blunts emotional range — flattens the highs along with the lows</li>
+    </ul>
+
+    <p>The goal is not to block the response. The goal is to <strong>retrain the system that generates it.</strong></p>
+  </div>
+
+  <!-- SECTION 2: THE SCIENCE -->
+  <div class="section">
+    <p class="section-label">The Science</p>
+    <h2>Your nervous system has a <em>brake pedal.</em></h2>
+
+    <p>Your autonomic nervous system has two modes: <strong>sympathetic</strong> (gas pedal — fight or flight) and <strong>parasympathetic</strong> (brake pedal — rest and digest). Anxiety is what happens when someone is floor-to-the-metal on the gas with a broken brake.</p>
+
+    <p>Propranolol blocks the exhaust pipe. The natural stack below <strong>fixes the brake pedal.</strong> Every tool in this protocol does one or more of three things: increases parasympathetic tone, modulates GABA (the brain's primary calming neurotransmitter), or lowers baseline cortisol.</p>
+
+    <div class="pull-quote">
+      <p>"Propranolol hides the symptoms. This stack changes the system producing them."</p>
+    </div>
+
+    <table class="science-table">
+      <thead>
+        <tr><th>Mechanism</th><th>What It Does</th><th>Tools That Target It</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Vagal tone activation</td><td>Engages the parasympathetic brake</td><td>Breathing, cold exposure</td></tr>
+        <tr><td>GABA modulation</td><td>Slows neural excitability directly</td><td>L-Theanine, Magnesium</td></tr>
+        <tr><td>HPA axis regulation</td><td>Lowers cortisol at the source</td><td>Ashwagandha, breathing</td></tr>
+        <tr><td>Alpha wave promotion</td><td>Creates alert calm — not sedation</td><td>L-Theanine</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 3: PROPRANOLOL vs. THE STACK -->
+  <div class="section">
+    <p class="section-label">The Comparison</p>
+    <h2>What propranolol <em>does</em> vs. what the stack does.</h2>
+
+    <p>This is not anti-medicine. If your doctor prescribed propranolol, that is between you and them. But you should know what you are actually doing to your body — and what the alternatives look like.</p>
+
+    <div class="bact-grid">
+      <div class="bact-col">
+        <div class="bact-header bad">✗ Propranolol</div>
+        <div class="bact-item"><strong>Blocks symptoms</strong><span>Heart rate drops, tremors stop — cause unchanged</span></div>
+        <div class="bact-item"><strong>Requires prescription</strong><span>Dependency on doctor visits and refills</span></div>
+        <div class="bact-item"><strong>Side effects</strong><span>Fatigue, dizziness, cold hands, brain fog</span></div>
+        <div class="bact-item"><strong>Rebound anxiety</strong><span>Stopping often makes anxiety worse</span></div>
+        <div class="bact-item"><strong>Emotional blunting</strong><span>Dulls positive emotions alongside negative</span></div>
+      </div>
+      <div class="bact-col">
+        <div class="bact-header good">✓ The Natural Stack</div>
+        <div class="bact-item"><strong>Retrains the system</strong><span>Builds parasympathetic tone over time</span></div>
+        <div class="bact-item"><strong>No prescription needed</strong><span>Over-the-counter or free (breathing)</span></div>
+        <div class="bact-item"><strong>No significant side effects</strong><span>Well-tolerated at recommended doses</span></div>
+        <div class="bact-item"><strong>Cumulative benefits</strong><span>Gets more effective with consistent use</span></div>
+        <div class="bact-item"><strong>Alert calm</strong><span>Reduces anxiety without dulling cognition</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: THE STACK -->
+  <div class="section">
+    <p class="section-label">The Stack</p>
+    <h2>Five tools. <em>Zero</em> prescriptions.</h2>
+
+    <p>Each tool targets a different mechanism. Use them together. They compound.</p>
+
+    <!-- TOOL 1: L-THEANINE -->
+    <div class="stack-card">
+      <div class="stack-card-label">Tool 01</div>
+      <h3>L-Theanine — <em>The Quiet Switch</em></h3>
+      <span class="stack-card-dose">200mg, 1–2x daily (or 30 min before a stressful event)</span>
+      <p>An amino acid found in green tea. Crosses the blood-brain barrier within 30 minutes. Increases alpha brain wave activity — the same wave pattern seen during meditation. Boosts GABA, serotonin, and dopamine simultaneously without sedation. You feel alert but the mental chatter stops. Multiple randomized controlled trials show significant reductions in stress and anxiety markers. This is the closest natural analog to what propranolol does for your heart — but for your brain, without the fog.</p>
+    </div>
+
+    <!-- TOOL 2: DIAPHRAGMATIC BREATHING -->
+    <div class="stack-card">
+      <div class="stack-card-label">Tool 02</div>
+      <h3>Diaphragmatic Breathing — <em>The Vagal Reset</em></h3>
+      <span class="stack-card-dose">5 minutes, 2x daily + on demand before stressful events</span>
+      <p>Your vagus nerve is the longest cranial nerve in your body. It runs from your brainstem to your gut. When you exhale slowly and deeply, the diaphragm physically stimulates the vagus nerve, activating the parasympathetic system on command. This is not meditation. This is not vibes. This is a mechanical lever. Use the 4-7-8 pattern below:</p>
+
+      <div class="breath-diagram">
+        <div class="breath-phase">
+          <div class="breath-circle inhale">4s</div>
+          <div class="breath-label">Inhale</div>
+        </div>
+        <div class="breath-arrow">→</div>
+        <div class="breath-phase">
+          <div class="breath-circle hold">7s</div>
+          <div class="breath-label">Hold</div>
+        </div>
+        <div class="breath-arrow">→</div>
+        <div class="breath-phase">
+          <div class="breath-circle exhale">8s</div>
+          <div class="breath-label">Exhale</div>
+        </div>
+        <div class="breath-arrow">→</div>
+        <div class="breath-phase">
+          <div class="breath-circle hold">4s</div>
+          <div class="breath-label">Pause</div>
+        </div>
+      </div>
+      <p>The exhale being longer than the inhale is what matters. That ratio is the signal. Repeat 4–6 cycles. Your heart rate will drop measurably within 90 seconds.</p>
+    </div>
+
+    <!-- TOOL 3: MAGNESIUM GLYCINATE -->
+    <div class="stack-card">
+      <div class="stack-card-label">Tool 03</div>
+      <h3>Magnesium Glycinate — <em>The Missing Mineral</em></h3>
+      <span class="stack-card-dose">300–400mg elemental magnesium, taken at night</span>
+      <p>Over half of the population is magnesium deficient. Magnesium regulates GABA receptors, calms the HPA axis, and is required for over 300 enzymatic reactions in the body. Glycinate is the form you want — it crosses the blood-brain barrier efficiently and the glycine itself has calming properties. Low magnesium alone can cause anxiety, insomnia, and muscle tension. You may be treating a deficiency, not a disorder. Take it before bed — it also improves sleep quality.</p>
+    </div>
+
+    <!-- TOOL 4: COLD EXPOSURE -->
+    <div class="stack-card">
+      <div class="stack-card-label">Tool 04</div>
+      <h3>Cold Water Finish — <em>The Vagal Hammer</em></h3>
+      <span class="stack-card-dose">30–90 seconds cold water at end of shower, daily</span>
+      <p>Cold water triggers the dive reflex — an involuntary parasympathetic response that immediately slows heart rate and redirects blood to vital organs. It is the most powerful acute vagal stimulator available without a device. You do not need an ice bath. The last 30–90 seconds of your shower switched to cold is enough. The initial gasp is the sympathetic spike. The calm 20 seconds later is the parasympathetic takeover. Over weeks, this trains your nervous system to recover from stress faster. Basal vagal tone increases measurably.</p>
+    </div>
+
+    <!-- TOOL 5: ASHWAGANDHA -->
+    <div class="stack-card">
+      <div class="stack-card-label">Tool 05</div>
+      <h3>Ashwagandha (KSM-66) — <em>The Cortisol Regulator</em></h3>
+      <span class="stack-card-dose">600mg KSM-66 extract, daily with food</span>
+      <p>An adaptogen with over a dozen randomized controlled trials behind it. KSM-66 is the full-spectrum root extract with the strongest evidence base. Reduces serum cortisol by an average of 23–30% in clinical trials. Lowers anxiety scores on validated scales (HAM-A, PSS) comparably to some prescription anxiolytics. It does not work instantly — takes 4–8 weeks of daily use. But the effect is systemic: it recalibrates the HPA axis, the very system that decides how much stress hormone you produce. This is the long game.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 5: THE DAILY PROTOCOL -->
+  <div class="section">
+    <p class="section-label">The Protocol</p>
+    <h2>How to <em>actually</em> run this.</h2>
+
+    <p>All five tools, organized into a daily system. No guesswork. No motivation required.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <div class="step-title">Morning — Breathe before your phone</div>
+          <p class="step-desc">Before you check anything, sit upright. Do 4–6 rounds of 4-7-8 breathing. This takes under 5 minutes. You are setting parasympathetic tone for the entire day. Non-negotiable.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <div class="step-title">Morning — L-Theanine with your first drink</div>
+          <p class="step-desc">Take 200mg L-Theanine. If you drink coffee, take it with coffee. L-Theanine smooths out the caffeine jitters while preserving the focus. They are synergistic.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <div class="step-title">Morning — Cold finish your shower</div>
+          <p class="step-desc">Normal shower, then 30–90 seconds cold at the end. Breathe through the initial shock. By day 7 the gasp disappears. By day 21 you will crave it. This is nervous system training.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <div class="step-title">Pre-event — Emergency stack</div>
+          <p class="step-desc">Presentation, date, confrontation. Take 200mg L-Theanine 30 minutes before. Do 3–4 rounds of 4-7-8 breathing in the bathroom beforehand. This combination will lower your heart rate and quiet the mental spiral. This is your propranolol replacement.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div>
+          <div class="step-title">Evening — Magnesium + Ashwagandha</div>
+          <p class="step-desc">Take 300–400mg Magnesium Glycinate and 600mg KSM-66 Ashwagandha with dinner or before bed. These are the slow builders. They work on cortisol and GABA while you sleep. The effects compound over weeks.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">6</div>
+        <div>
+          <div class="step-title">Night — Breathing again</div>
+          <p class="step-desc">4–6 rounds of 4-7-8 before sleep. Bookend your day with vagal activation. This is how you shift from a nervous system stuck on "fight" to one that defaults to "calm."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 6: MISTAKES -->
+  <div class="section">
+    <p class="section-label">Common Mistakes</p>
+    <h2>Do not sabotage the <em>stack.</em></h2>
+
+    <div class="mistake">
+      <span class="mistake-x">✗</span>
+      <div>
+        <div class="mistake-title">Expecting instant results from supplements</div>
+        <p class="mistake-desc">L-Theanine works in 30 minutes. But Ashwagandha and Magnesium take weeks to shift baseline cortisol and GABA tone. Give it 30 days minimum before evaluating.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <span class="mistake-x">✗</span>
+      <div>
+        <div class="mistake-title">Chest breathing instead of diaphragmatic</div>
+        <p class="mistake-desc">If your shoulders rise when you inhale, you are doing it wrong. Your belly should expand outward. Chest breathing actually activates the sympathetic system — the opposite of what you want.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <span class="mistake-x">✗</span>
+      <div>
+        <div class="mistake-title">Buying cheap magnesium oxide</div>
+        <p class="mistake-desc">Magnesium oxide has roughly 4% bioavailability. You are literally flushing it down the toilet. Get Glycinate, Threonate, or Bisglycinate. Read the label.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <span class="mistake-x">✗</span>
+      <div>
+        <div class="mistake-title">Skipping the breathing because "it feels stupid"</div>
+        <p class="mistake-desc">The vagus nerve does not care about your ego. 4-7-8 breathing is the single most studied, fastest-acting, free anxiety intervention available to a human being. Use it.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <span class="mistake-x">✗</span>
+      <div>
+        <div class="mistake-title">Stopping propranolol cold turkey</div>
+        <p class="mistake-desc">If you are currently on propranolol, do not stop abruptly. Beta-blocker withdrawal can cause rebound tachycardia and spikes in blood pressure. Build the natural stack alongside it, then taper with your doctor.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <span class="mistake-x">✗</span>
+      <div>
+        <div class="mistake-title">Using generic ashwagandha extracts</div>
+        <p class="mistake-desc">Not all ashwagandha is the same. KSM-66 is full-spectrum root extract with the most clinical evidence. Sensoril is a leaf-root blend — also effective, but different dosing. Random unlabeled powders are a gamble.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>This guide is based on published clinical research. It is not medical advice. If you are currently on medication, work with your doctor before making changes.</p>
+  <span class="footer-brand">Subscribe to Dr. Painkill.</span>
+</div>
+
+</body>
+</html>
