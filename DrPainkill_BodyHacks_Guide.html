@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Body Hacks: The Full Stack — Dr. Painkill</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0e0e0e;
+    --surface: #161616;
+    --surface2: #1e1e1e;
+    --border: #2a2a2a;
+    --text: #e8e8e8;
+    --muted: #888;
+    --accent: #e8e2d0;
+    --red: #c0392b;
+    --green: #1e7a3a;
+    --white: #ffffff;
+    --blue: #1a3a5c;
+    --amber: #b8860b;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--bg);
+    padding: 80px 24px 60px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(232,226,208,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .brand-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--muted);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 10vw, 88px);
+    line-height: 0.95;
+    color: var(--white);
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+  }
+  .hero h1 span {
+    color: var(--accent);
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+  }
+  .hero-sub {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 520px;
+    margin: 0 auto 36px;
+    font-weight: 300;
+  }
+  .study-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 8px 16px;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+  .study-badge strong { color: var(--accent); }
+
+  /* ── STATS ROW ── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-bottom: 1px solid var(--border);
+  }
+  .stat {
+    padding: 28px 16px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--white);
+    line-height: 1;
+    display: block;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    margin-top: 4px;
+    text-transform: uppercase;
+  }
+
+  /* ── CONTAINER ── */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ── CHAPTER DIVIDER ── */
+  .chapter-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .chapter-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    padding: 14px 24px;
+    border-right: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  .chapter-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    letter-spacing: 3px;
+    color: var(--accent);
+    padding: 14px 0;
+    text-transform: uppercase;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    padding: 64px 0 48px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(34px, 6vw, 52px);
+    color: var(--white);
+    line-height: 1.0;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+  }
+  .section h2 em {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    color: var(--accent);
+  }
+  p {
+    color: #aaa;
+    margin-bottom: 16px;
+    font-size: 15.5px;
+  }
+  p strong { color: var(--text); }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    margin: 28px 0;
+    background: var(--surface);
+  }
+  .pull-quote p {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--accent);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ── CHECK LIST ── */
+  .check-list {
+    list-style: none;
+    margin: 20px 0;
+  }
+  .check-list li {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    color: #bbb;
+    align-items: flex-start;
+  }
+  .check-list li:last-child { border-bottom: none; }
+  .check-list li::before {
+    content: '✓';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ── SCIENCE TABLE ── */
+  .science-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+  }
+  .science-table th {
+    background: var(--surface2);
+    color: var(--muted);
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-bottom: 1px solid var(--border);
+  }
+  .science-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    color: #bbb;
+    vertical-align: top;
+  }
+  .science-table tr:last-child td { border-bottom: none; }
+  .science-table td:first-child { color: var(--text); font-weight: 500; }
+  .science-table td:nth-child(2) { color: var(--accent); font-weight: 600; width: 90px; }
+
+  /* ── TWO COL COMPARE ── */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 24px 0;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .compare-col { background: var(--surface); }
+  .compare-header {
+    padding: 12px 16px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .compare-header.bad { background: #2a0a0a; color: #e05555; }
+  .compare-header.good { background: #0a1e0a; color: #4caf50; }
+  .compare-item {
+    padding: 10px 16px;
+    border-top: 1px solid var(--border);
+    font-size: 13.5px;
+  }
+  .compare-item strong { display: block; color: var(--text); font-size: 13px; }
+  .compare-item span { color: var(--muted); font-size: 12px; }
+
+  /* ── PROTOCOL STEPS ── */
+  .steps { margin: 24px 0; }
+  .step {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    width: 40px;
+    height: 40px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .step-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 4px;
+    letter-spacing: 0.3px;
+  }
+  .step-desc {
+    font-size: 14.5px;
+    color: #999;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── MISTAKES ── */
+  .mistake {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .mistake:last-child { border-bottom: none; }
+  .mistake-x {
+    color: var(--red);
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .mistake-title {
+    font-weight: 600;
+    color: #e05555;
+    font-size: 14.5px;
+    margin-bottom: 3px;
+  }
+  .mistake-desc {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+  }
+
+  /* ── FACT BLOCKS ── */
+  .fact-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 24px 0;
+    background: var(--border);
+  }
+  .fact-block {
+    background: var(--surface);
+    padding: 20px;
+  }
+  .fact-block-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .fact-block-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .fact-block-desc {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.5;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline { margin: 28px 0; }
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-time {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--accent);
+    line-height: 1;
+    padding-top: 2px;
+  }
+  .timeline-content-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 3px;
+  }
+  .timeline-content-desc {
+    font-size: 13.5px;
+    color: #888;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ── WARNING BOX ── */
+  .warning-box {
+    border: 1px solid #3a1a1a;
+    background: #1a0a0a;
+    padding: 18px 20px;
+    margin: 28px 0;
+  }
+  .warning-box-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #e05555;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .warning-box p {
+    font-size: 14px;
+    color: #c88;
+    margin: 0;
+  }
+
+  /* ── INFO BOX ── */
+  .info-box {
+    border: 1px solid #1a2a1a;
+    background: #0a150a;
+    padding: 18px 20px;
+    margin: 28px 0;
+  }
+  .info-box-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #4caf50;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .info-box p {
+    font-size: 14px;
+    color: #8c8;
+    margin: 0;
+  }
+
+  /* ── HORMONE TABLE ── */
+  .hormone-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    margin: 24px 0;
+    background: var(--border);
+  }
+  .hormone-block {
+    background: var(--surface);
+    padding: 20px 16px;
+    text-align: center;
+  }
+  .hormone-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .hormone-role {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .hormone-tag {
+    display: inline-block;
+    font-size: 11px;
+    padding: 3px 10px;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+  .hormone-tag.down { background: #2a0a0a; color: #e05555; }
+  .hormone-tag.up { background: #0a2a0a; color: #4caf50; }
+
+  /* ── FOOTER ── */
+  .footer {
+    padding: 48px 24px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  .footer p {
+    color: var(--muted);
+    font-size: 13px;
+    max-width: 480px;
+    margin: 0 auto 12px;
+    text-align: center;
+  }
+  .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--white);
+    display: block;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .stats { grid-template-columns: repeat(3, 1fr); }
+    .stat:nth-child(4), .stat:nth-child(5) { border-top: 1px solid var(--border); }
+    .compare-grid, .fact-row, .hormone-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="brand-label">Dr. Painkill</span>
+  <h1>Body Hacks:<br/><span>The Full Stack</span></h1>
+  <p class="hero-sub">Five things your body does wrong every single day. Five things you can fix by tomorrow morning. No supplements. No excuses.</p>
+  <div class="study-badge">
+    <strong>5 PROTOCOLS</strong> &nbsp;Breathing · Sleep · Nutrition · Cortisol · Cold
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><span class="stat-num">5</span><span class="stat-label">Body Systems</span></div>
+  <div class="stat"><span class="stat-num">0</span><span class="stat-label">Supplements</span></div>
+  <div class="stat"><span class="stat-num">24</span><span class="stat-label">Hour Reset</span></div>
+  <div class="stat"><span class="stat-num">30</span><span class="stat-label">Day Protocol</span></div>
+  <div class="stat"><span class="stat-num">FREE</span><span class="stat-label">Cost to You</span></div>
+</div>
+
+<div class="container">
+
+  <!-- CHAPTER 01 -->
+  <div class="chapter-divider" style="margin-top:0;">
+    <span class="chapter-num">CHAPTER 01</span>
+    <span class="chapter-title">Diaphragmatic Breathing</span>
+  </div>
+
+  <div class="section">
+    <p class="section-label">The Breath</p>
+    <h2>You have been breathing <em>wrong</em> your entire life.</h2>
+
+    <p>Most adults breathe into their chest. Shallow, fast, and wrong. This is not a minor quirk — <strong>chest breathing chronically activates your sympathetic nervous system.</strong> That is your fight-or-flight system. You are walking around in a low-grade threat response, all day, every day, for no reason.</p>
+
+    <p>Diaphragmatic breathing — breathing into your belly, not your chest — activates the vagus nerve and triggers the parasympathetic response. Rest and digest. Recovery mode. The state your body is actually supposed to spend most of its time in.</p>
+
+    <div class="pull-quote">
+      <p>"Your breath is the only autonomic function you can consciously control. That makes it the fastest hack into your nervous system that exists."</p>
+    </div>
+
+    <p>The mechanism is direct: slow, deep belly breathing stimulates the vagus nerve, which signals your brain to lower heart rate, reduce blood pressure, and cut cortisol production. Studies have shown measurable cortisol reduction after as little as <strong>10 minutes of diaphragmatic breathing.</strong></p>
+
+    <div class="fact-row">
+      <div class="fact-block">
+        <div class="fact-block-label">Chest Breather</div>
+        <div class="fact-block-value">14–20</div>
+        <div class="fact-block-desc">Breaths per minute. Shallow. Sympathetic nervous system stays activated. Cortisol stays elevated.</div>
+      </div>
+      <div class="fact-block">
+        <div class="fact-block-label">Belly Breather</div>
+        <div class="fact-block-value">5–7</div>
+        <div class="fact-block-desc">Breaths per minute. Deep. Vagal tone increases. Stress response turns off. HRV improves.</div>
+      </div>
+    </div>
+
+    <p class="section-label" style="margin-top:32px;">The Protocol</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <div class="step-title">Hand Placement — Find the target</div>
+          <p class="step-desc">Place one hand on your chest, one on your stomach just below your ribs. When you breathe correctly, the stomach hand moves. The chest hand stays still. That is the only cue you need.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <div class="step-title">Inhale — 4 counts through the nose</div>
+          <p class="step-desc">Breathe in slowly through your nose for 4 seconds. Let your belly expand outward. Your ribcage should widen laterally. You are not sucking in air — you are letting it fall in by lowering the diaphragm.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <div class="step-title">Hold — 4 counts</div>
+          <p class="step-desc">Hold at the top for 4 counts. This is where CO2 and O2 exchange completes. Do not skip this. The hold is what drives the vagal response deeper.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <div class="step-title">Exhale — 6 to 8 counts through the mouth</div>
+          <p class="step-desc">A long, slow exhale. The exhale phase specifically activates the parasympathetic branch. The longer your exhale relative to your inhale, the stronger the calming effect. Do not rush this.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div>
+          <div class="step-title">Duration — 10 minutes minimum for stress relief</div>
+          <p class="step-desc">For acute stress, 5 minutes produces measurable results. For a sustained cortisol reduction protocol, do 10 minutes every morning before checking your phone. Do not check your phone first. Your nervous system does not need that information before it is ready.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <div class="info-box-label">Stress Protocol Override</div>
+      <p>When you feel a stress spike — email from your boss, bad news, argument — do 4 rounds of box breathing immediately: 4 in, 4 hold, 4 out, 4 hold. This chemically interrupts the cortisol cascade before it completes. You have about 30 seconds before it locks in. Use them.</p>
+    </div>
+  </div>
+
+  <!-- CHAPTER 02 -->
+  <div class="chapter-divider">
+    <span class="chapter-num">CHAPTER 02</span>
+    <span class="chapter-title">Sleep Architecture</span>
+  </div>
+
+  <div class="section">
+    <p class="section-label">The Sleep</p>
+    <h2>You are not sleeping. <em>You are crashing.</em></h2>
+
+    <p>Most people do not sleep — they collapse after a day of elevated cortisol, blue light exposure, and late-night eating, and call it sleep. The body has a precise hormonal sequence that needs to fire for real restorative sleep to happen. <strong>You are probably disrupting every step of it.</strong></p>
+
+    <p>Here is the sequence: cortisol needs to hit its daily low by late evening so melatonin can rise. Body temperature needs to drop 1–2°C for deep sleep to initiate. Growth hormone releases in the first 90-minute sleep cycle. If you are eating late, staring at a screen, or going to bed stressed, none of this fires correctly.</p>
+
+    <div class="pull-quote">
+      <p>"Every night you sleep under seven hours, your brain clears less metabolic waste than it accumulated that day. You are literally building up cellular debris in your own skull."</p>
+    </div>
+
+    <table class="science-table">
+      <thead>
+        <tr><th>Sleep Stage</th><th>Duration</th><th>What Actually Happens</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>NREM Stage 1–2</td><td>~20 min</td><td>Heart rate slows, body temp drops, memory consolidation begins</td></tr>
+        <tr><td>NREM Stage 3 (Deep)</td><td>~30–40 min</td><td>Growth hormone released, tissue repair, immune function peaks</td></tr>
+        <tr><td>REM Sleep</td><td>~90 min cycle</td><td>Emotional processing, neural pruning, long-term memory formation</td></tr>
+        <tr><td>Glymphatic Flush</td><td>All night</td><td>Brain clears beta-amyloid and metabolic waste — only happens during sleep</td></tr>
+      </tbody>
+    </table>
+
+    <p class="section-label" style="margin-top:32px;">The Evening Stack</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-time">–3 HRS</div>
+        <div>
+          <div class="timeline-content-title">Last meal of the day</div>
+          <p class="timeline-content-desc">Eating within 3 hours of sleep elevates insulin, raises core temperature, and blocks melatonin onset. Your body cannot repair tissue and digest food at the same time. It will choose digestion. Every time.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">–2 HRS</div>
+        <div>
+          <div class="timeline-content-title">Kill overhead lights — switch to warm/dim</div>
+          <p class="timeline-content-desc">Overhead bright white light suppresses melatonin production for up to 3 hours. Switch to lamps, candles, warm lighting. Your brain registers light spectrum, not just brightness.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">–90 MIN</div>
+        <div>
+          <div class="timeline-content-title">No more screens — or blue light glasses, minimum</div>
+          <p class="timeline-content-desc">Blue light hits the intrinsically photosensitive retinal ganglion cells and sends a direct signal to your suprachiasmatic nucleus that it is noon. Your SCN does not understand Netflix. It understands light.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">–30 MIN</div>
+        <div>
+          <div class="timeline-content-title">Drop room temperature to 17–19°C (62–67°F)</div>
+          <p class="timeline-content-desc">Core body temperature must fall to initiate deep sleep. A cool room accelerates this. Hot rooms are one of the most common causes of broken sleep architecture. This is not a preference issue. It is physiology.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">MORNING</div>
+        <div>
+          <div class="timeline-content-title">Sunlight exposure within 30 minutes of waking</div>
+          <p class="timeline-content-desc">Morning sunlight sets your circadian clock forward 14–16 hours, meaning it sets your melatonin onset for that evening. Your sleep quality tonight depends on what your eyes see this morning. Go outside for 10 minutes. Non-negotiable.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <div class="warning-box-label">Hard Stop</div>
+      <p>Alcohol is not a sleep aid. It collapses you into NREM but suppresses REM sleep. You wake up after 5 hours of "sleep" having completed zero emotional processing cycles. This is why you feel worse after a night of drinking even if you slept 8 hours.</p>
+    </div>
+  </div>
+
+  <!-- CHAPTER 03 -->
+  <div class="chapter-divider">
+    <span class="chapter-num">CHAPTER 03</span>
+    <span class="chapter-title">Nutrition: The Real Model</span>
+  </div>
+
+  <div class="section">
+    <p class="section-label">The Food</p>
+    <h2>Fat did not make you fat. <em>Carbohydrates did.</em></h2>
+
+    <p>The diet industry spent 40 years telling you fat was the enemy. The low-fat movement exploded in the 1980s. Obesity rates doubled. Then tripled. <strong>The food that replaced dietary fat was refined carbohydrate.</strong> Sugar. Seed oils. Ultra-processed garbage engineered to hit your dopamine circuit and keep you eating.</p>
+
+    <p>Here is the actual mechanism. Carbohydrates — especially refined ones — spike blood glucose. Glucose spike triggers insulin release. Insulin's job is to shuttle energy into cells and signal fat storage. When insulin is chronically elevated, <strong>your body physically cannot access stored fat for fuel.</strong> You are locked out of your own energy reserves. Then you get hungry again two hours later and repeat the cycle.</p>
+
+    <div class="pull-quote">
+      <p>"Dietary fat does not spike insulin. Protein causes a moderate rise. Carbohydrates cause the spike. If you want to understand body composition, start with insulin. Everything else is noise."</p>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-col">
+        <div class="compare-header bad">✗ High Carb / Low Fat (Standard Advice)</div>
+        <div class="compare-item"><strong>Chronic insulin elevation</strong><span>Fat storage locked on, fat burning locked off</span></div>
+        <div class="compare-item"><strong>Blood sugar spikes and crashes</strong><span>Energy swings, hunger every 2–3 hours</span></div>
+        <div class="compare-item"><strong>Inflammatory seed oils</strong><span>Oxidized linoleic acid disrupts cell membranes</span></div>
+        <div class="compare-item"><strong>Low fat = low hormones</strong><span>Sex hormones are built from dietary fat. Low fat diet = low testosterone</span></div>
+        <div class="compare-item"><strong>Processed grains</strong><span>Antinutrients, glucose spikes, zero satiety</span></div>
+      </div>
+      <div class="compare-col">
+        <div class="compare-header good">✓ Whole Foods / Healthy Fats Protocol</div>
+        <div class="compare-item"><strong>Stable blood glucose</strong><span>Sustained energy, no crashes, no hunger spikes</span></div>
+        <div class="compare-item"><strong>Dietary fat fuels hormones</strong><span>Cholesterol is the precursor to every steroid hormone</span></div>
+        <div class="compare-item"><strong>Grass-fed beef</strong><span>CLA, omega-3s, fat-soluble vitamins A, D, E, K2</span></div>
+        <div class="compare-item"><strong>Animal fats are stable</strong><span>Saturated and monounsaturated fats do not oxidize under heat</span></div>
+        <div class="compare-item"><strong>Micronutrient density</strong><span>Liver, red meat, eggs — nature's multivitamin, no capsule required</span></div>
+      </div>
+    </div>
+
+    <p><strong>Grass-fed beef specifically</strong> is not a marketing term. Grain-fed cattle produce meat with an omega-6 to omega-3 ratio of roughly 7:1. Grass-fed brings that ratio closer to 2:1 — which is what human tissue is supposed to run on. Grass-fed also contains conjugated linoleic acid (CLA), which has been studied for its role in body composition and insulin sensitivity. You are not paying extra for a label. You are paying for a fundamentally different nutrient profile.</p>
+
+    <table class="science-table">
+      <thead>
+        <tr><th>Food</th><th>Why It Matters</th><th>What You Get</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Grass-fed beef</td><td>Optimal omega ratio, CLA</td><td>Muscle substrate, zinc, B12, heme iron, CLA for body composition</td></tr>
+        <tr><td>Pasture-raised eggs</td><td>Complete protein + fat soluble vitamins</td><td>Choline (brain), vitamin D, K2, A — all in one package</td></tr>
+        <tr><td>Butter / ghee (grass-fed)</td><td>K2, butyrate, stable cooking fat</td><td>K2 routes calcium to bones not arteries. Butyrate feeds gut lining.</td></tr>
+        <tr><td>Fatty fish</td><td>DHA / EPA — omega-3 index</td><td>Anti-inflammatory, brain function, cortisol regulation</td></tr>
+        <tr><td>Beef liver</td><td>Most nutrient-dense food per gram</td><td>Retinol, B12, folate, copper, CoQ10 — one serving covers most deficiencies</td></tr>
+        <tr><td>Avocado / olive oil</td><td>Monounsaturated — anti-inflammatory</td><td>Oleic acid, antioxidants, does not spike insulin</td></tr>
+      </tbody>
+    </table>
+
+    <div class="warning-box">
+      <div class="warning-box-label">What to Actually Eliminate</div>
+      <p>Seed oils (canola, soybean, sunflower, cottonseed, corn oil). These are polyunsaturated fats extracted through industrial solvent processing. They oxidize under heat, embed in your cell membranes, and promote systemic inflammation. They are in nearly every packaged food, every restaurant fryer, and every "heart healthy" cooking spray. Read labels. Cook with butter, ghee, tallow, or olive oil.</p>
+    </div>
+  </div>
+
+  <!-- CHAPTER 04 -->
+  <div class="chapter-divider">
+    <span class="chapter-num">CHAPTER 04</span>
+    <span class="chapter-title">Cortisol Management</span>
+  </div>
+
+  <div class="section">
+    <p class="section-label">The Stress Hormone</p>
+    <h2>Cortisol is not your enemy. <em>Chronic cortisol is.</em></h2>
+
+    <p>Cortisol is designed to be high in the morning — it is the hormone that wakes you up, gives you drive, and gets you moving. By evening, it should be near zero so melatonin can take over. <strong>Modern life has inverted this curve entirely.</strong> People wake up exhausted with low morning cortisol, then spike it all day through stress, poor food, no sleep, and blue light at night.</p>
+
+    <p>Chronic elevated cortisol does the following: it breaks down muscle tissue for glucose (gluconeogenesis), it stores fat preferentially in the abdomen, it suppresses immune function, it disrupts thyroid hormone conversion, and it shrinks the hippocampus over time. That last one means <strong>chronic stress is literally making you structurally worse at memory and learning.</strong></p>
+
+    <div class="hormone-row">
+      <div class="hormone-block">
+        <div class="hormone-name">Cortisol</div>
+        <div class="hormone-role">Stress / Wake Signal</div>
+        <div class="hormone-tag down">↑ Chronically Elevated</div>
+      </div>
+      <div class="hormone-block">
+        <div class="hormone-name">Testosterone</div>
+        <div class="hormone-role">Anabolic / Drive</div>
+        <div class="hormone-tag down">↓ Suppressed by Cortisol</div>
+      </div>
+      <div class="hormone-block">
+        <div class="hormone-name">Melatonin</div>
+        <div class="hormone-role">Sleep / Repair Onset</div>
+        <div class="hormone-tag down">↓ Blocked by Cortisol</div>
+      </div>
+    </div>
+
+    <p class="section-label" style="margin-top:32px;">Lower It Naturally</p>
+
+    <ul class="check-list">
+      <li><strong>Morning sunlight, first 30 minutes after waking.</strong> This sets cortisol's natural peak time and anchors its fall later in the day. Skipping this means your cortisol curve drifts and stays elevated too long.</li>
+      <li><strong>Do not check your phone immediately upon waking.</strong> Every notification is a micro-stressor. You are injecting anxiety into a nervous system that has been in repair mode for 8 hours. Give it 30 minutes before you reintroduce the world's problems.</li>
+      <li><strong>Eat enough food.</strong> Under-eating is a physical stressor that chronically elevates cortisol. Very low calorie diets, skipping meals, and excessive fasting all raise cortisol. Your body interprets starvation as a threat. Feed it.</li>
+      <li><strong>Limit caffeine to before noon.</strong> Caffeine works by blocking adenosine receptors and raising cortisol. Afternoon coffee gives you a cortisol spike at the exact time your body is trying to wind cortisol down. This destroys your evening hormonal sequence.</li>
+      <li><strong>Resistance training — not excessive cardio.</strong> Acute cortisol from lifting resolves within an hour and produces anabolic adaptations. Chronic high-volume cardio maintains elevated cortisol for hours. Lift heavy. Sprint occasionally. Stop doing two-hour steady-state sessions and calling it health.</li>
+      <li><strong>Magnesium glycinate before bed.</strong> Roughly 70% of people are deficient. Magnesium is a cofactor in over 300 enzymatic reactions, including cortisol regulation and GABA production. 300–400mg glycinate form before sleep. Not oxide. Glycinate.</li>
+      <li><strong>Social connection and laughter.</strong> This one sounds soft. It is not. Oxytocin directly suppresses cortisol and CRH (corticotropin-releasing hormone). Human contact is a measurable intervention. Isolation is a measurable stressor. Act accordingly.</li>
+    </ul>
+
+    <div class="pull-quote">
+      <p>"You cannot out-supplement chronic stress. You cannot out-train it. You cannot out-eat it. You have to structurally remove the stressors or structurally build the systems that buffer them. There is no third option."</p>
+    </div>
+
+    <div class="info-box">
+      <div class="info-box-label">The Cortisol Rhythm Reset — 7 Day Protocol</div>
+      <p>Sunlight within 30 min of waking. No phone for 30 min. No caffeine after 12pm. Last meal by 7pm. Lights dim by 9pm. Magnesium before bed. 10 minutes of belly breathing somewhere in the day. Do all 7 for 7 consecutive days. Your sleep will shift noticeably by day 4. Your mood will shift by day 6.</p>
+    </div>
+  </div>
+
+  <!-- CHAPTER 05 -->
+  <div class="chapter-divider">
+    <span class="chapter-num">CHAPTER 05</span>
+    <span class="chapter-title">Cold Exposure</span>
+  </div>
+
+  <div class="section">
+    <p class="section-label">The Wild Card</p>
+    <h2>Your shower is a <em>free drug.</em> You are taking it warm.</h2>
+
+    <p>Cold water immersion and cold showers produce a catecholamine release — specifically norepinephrine — of up to <strong>300–500% above baseline</strong> within minutes. Norepinephrine is an attention, focus, and mood molecule. It also drives fat metabolism. You have access to this response every single morning in your bathroom, and you are choosing not to use it because it is uncomfortable for 30 seconds.</p>
+
+    <p>Chronic cold exposure also increases brown adipose tissue (BAT) activity — the type of fat that burns calories to generate heat rather than storing them. Regular cold exposure trains your body to metabolically activate more BAT, improving insulin sensitivity and resting metabolic rate over time. It is not magic. It is thermogenesis.</p>
+
+    <div class="pull-quote">
+      <p>"Deliberate discomfort trains your prefrontal cortex to override the amygdala. Every time you choose cold over warm, you are strengthening the neural pathway that lets you do hard things on purpose."</p>
+    </div>
+
+    <div class="fact-row">
+      <div class="fact-block">
+        <div class="fact-block-label">Norepinephrine Increase</div>
+        <div class="fact-block-value">300%+</div>
+        <div class="fact-block-desc">From 1–3 minutes of cold water exposure. Equivalent to what some stimulant medications produce. Available in your shower. Free of charge.</div>
+      </div>
+      <div class="fact-block">
+        <div class="fact-block-label">Dopamine Increase</div>
+        <div class="fact-block-value">250%</div>
+        <div class="fact-block-desc">Cold exposure produces a dopamine elevation that lasts 2–4 hours. Unlike caffeine, it does not crash. It is not a spike. It is a sustained elevation.</div>
+      </div>
+    </div>
+
+    <p class="section-label" style="margin-top:32px;">The Cold Protocol</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <div class="step-title">Start contrast — not pure cold</div>
+          <p class="step-desc">Begin your shower warm. At the end, turn it cold for the final 30–90 seconds. You are not trying to suffer for its own sake. You are triggering a specific physiological response. Build tolerance over 2 weeks.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <div class="step-title">Progress to 2–3 minutes cold end</div>
+          <p class="step-desc">Target temperature is uncomfortably cold — around 10–15°C (50–60°F) if you have control. The catecholamine release peaks in the first 1–2 minutes then plateaus. Three minutes captures the full response.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <div class="step-title">Breathe — do not hyperventilate</div>
+          <p class="step-desc">Cold triggers a gasp reflex and urge to breathe fast. Resist it. Slow, controlled nasal breaths through the cold. This is where it overlaps with the breathing protocol — you are training both systems simultaneously.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <div class="step-title">Do it in the morning, not before bed</div>
+          <p class="step-desc">Cold exposure raises core temperature as a rebound effect, increases alertness, and elevates cortisol as a beneficial acute spike. All useful in the morning. All counterproductive at 10pm when you are trying to sleep.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div>
+          <div class="step-title">Let yourself warm naturally after</div>
+          <p class="step-desc">Do not towel off aggressively and get dressed immediately. Let shivering occur if it does — this is where brown fat activation happens. The warming response is part of the protocol, not the recovery from it.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="compare-grid" style="margin-top:28px;">
+      <div class="compare-col">
+        <div class="compare-header bad">✗ Common Mistakes</div>
+        <div class="compare-item"><strong>Full cold from the start</strong><span>Unnecessary shock, does not increase efficacy</span></div>
+        <div class="compare-item"><strong>Cold before bed</strong><span>Kills melatonin onset, disrupts sleep</span></div>
+        <div class="compare-item"><strong>Hyperventilating through it</strong><span>Misses the nervous system regulation benefit</span></div>
+        <div class="compare-item"><strong>Doing it inconsistently</strong><span>Adaptation requires regularity — 4+ times per week</span></div>
+      </div>
+      <div class="compare-col">
+        <div class="compare-header good">✓ What You Are Actually Training</div>
+        <div class="compare-item"><strong>Prefrontal override</strong><span>Choosing discomfort on purpose builds executive control</span></div>
+        <div class="compare-item"><strong>Norepinephrine production</strong><span>Focus, drive, and fat mobilisation — sustained for hours</span></div>
+        <div class="compare-item"><strong>Brown fat activation</strong><span>Better insulin sensitivity and metabolic rate over weeks</span></div>
+        <div class="compare-item"><strong>Breathing under stress</strong><span>Gasp-override practice transfers to real-world stress events</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FULL STACK -->
+  <div class="chapter-divider">
+    <span class="chapter-num">SUMMARY</span>
+    <span class="chapter-title">The Full Stack — Daily Protocol</span>
+  </div>
+
+  <div class="section">
+    <p class="section-label">The Stack</p>
+    <h2>Do all five. <em>Every day.</em></h2>
+
+    <p>None of these work in isolation as well as they work together. Sleep improves breathing. Better breathing lowers cortisol. Lower cortisol improves sleep quality. Better nutrition stabilises blood sugar and removes the inflammatory noise. Cold exposure trains the nervous system that the breathing protocol talks to. <strong>These are not five separate hacks. They are one system.</strong></p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-time">AM</div>
+        <div>
+          <div class="timeline-content-title">Sunlight + Cold Shower + Belly Breathing (10 min)</div>
+          <p class="timeline-content-desc">Get outside within 30 minutes of waking. Cold shower ending. 10 minutes of diaphragmatic breathing before touching your phone. This stack sets cortisol rhythm, spikes norepinephrine, and anchors your nervous system for the day.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">DAY</div>
+        <div>
+          <div class="timeline-content-title">Eat real food. No caffeine after noon.</div>
+          <p class="timeline-content-desc">Grass-fed beef, eggs, healthy fats, minimal refined carbohydrate. Protein and fat with every meal. Caffeine cut by 12pm. If you need it after noon, the real issue is sleep debt.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">PM</div>
+        <div>
+          <div class="timeline-content-title">Last meal 3 hours before bed. Lights dim. Screens off.</div>
+          <p class="timeline-content-desc">Magnesium glycinate 300mg. Room to 17–19°C. Phone face down or in another room. This is not a sleep hygiene tip. This is a hormonal sequence you either protect or destroy.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      <p>"You do not need a biohacking budget. You need sunlight, cold water, real food, dark nights, and ten minutes of intentional breathing. Everything else is sold to you by people who profit from the fact that you skipped the basics."</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>This guide is for educational purposes only. It is not medical advice. If you have a diagnosed condition affecting any of the systems covered here, consult a physician.</p>
+  <p>But also: start breathing into your stomach. That one is free and has no side effects.</p>
+  <span class="footer-brand">Subscribe to Dr. Painkill.</span>
+</div>
+
+</body>
+</html>
