@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Energy Protocol — Dr. Painkill</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0e0e0e;
+    --surface: #161616;
+    --surface2: #1e1e1e;
+    --border: #2a2a2a;
+    --text: #e8e8e8;
+    --muted: #888;
+    --accent: #e8e2d0;
+    --red: #c0392b;
+    --green: #1e7a3a;
+    --white: #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--bg);
+    padding: 80px 24px 60px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(232,226,208,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .brand-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--muted);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 10vw, 88px);
+    line-height: 0.95;
+    color: var(--white);
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+  }
+  .hero h1 span {
+    color: var(--accent);
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+  }
+  .hero-sub {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 480px;
+    margin: 0 auto 36px;
+    font-weight: 300;
+  }
+  .study-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 8px 16px;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+  .study-badge strong { color: var(--accent); }
+
+  /* ── STATS ROW ── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid var(--border);
+  }
+  .stat {
+    padding: 28px 16px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--white);
+    line-height: 1;
+    display: block;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    margin-top: 4px;
+    text-transform: uppercase;
+  }
+
+  /* ── CONTAINER ── */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ── ARROW ── */
+  .arrow-divider {
+    text-align: center;
+    padding: 12px 0;
+  }
+  .arrow-divider .arrow {
+    display: inline-block;
+    color: var(--muted);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 6px;
+    opacity: 0.4;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    padding: 64px 0 48px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(34px, 6vw, 52px);
+    color: var(--white);
+    line-height: 1.0;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+  }
+  .section h2 em {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    color: var(--accent);
+  }
+  p {
+    color: #aaa;
+    margin-bottom: 16px;
+    font-size: 15.5px;
+  }
+  p strong { color: var(--text); }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    margin: 28px 0;
+    background: var(--surface);
+  }
+  .pull-quote p {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--accent);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ── CHECK LIST ── */
+  .check-list {
+    list-style: none;
+    margin: 20px 0;
+  }
+  .check-list li {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    color: #bbb;
+    align-items: flex-start;
+  }
+  .check-list li:last-child { border-bottom: none; }
+  .check-list li::before {
+    content: '✓';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ── SCIENCE TABLE ── */
+  .science-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+  }
+  .science-table th {
+    background: var(--surface2);
+    color: var(--muted);
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-bottom: 1px solid var(--border);
+  }
+  .science-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    color: #bbb;
+    vertical-align: top;
+  }
+  .science-table tr:last-child td { border-bottom: none; }
+  .science-table td:first-child { color: var(--text); font-weight: 500; }
+  .science-table td:nth-child(2) { color: var(--accent); font-weight: 600; width: 90px; }
+
+  /* ── FUEL GRID ── */
+  .fuel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 24px 0;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .fuel-col {
+    background: var(--surface);
+  }
+  .fuel-header {
+    padding: 12px 16px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .fuel-header.bad { background: #2a0a0a; color: #e05555; }
+  .fuel-header.good { background: #0a1e0a; color: #4caf50; }
+  .fuel-item {
+    padding: 10px 16px;
+    border-top: 1px solid var(--border);
+    font-size: 13.5px;
+  }
+  .fuel-item strong { display: block; color: var(--text); font-size: 13px; }
+  .fuel-item span { color: var(--muted); font-size: 12px; }
+
+  /* ── PROTOCOL STEPS ── */
+  .steps {
+    margin: 24px 0;
+    counter-reset: steps;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    width: 40px;
+    height: 40px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .step-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 4px;
+    letter-spacing: 0.3px;
+  }
+  .step-desc {
+    font-size: 14.5px;
+    color: #999;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── MISTAKES ── */
+  .mistake {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .mistake:last-child { border-bottom: none; }
+  .mistake-x {
+    color: var(--red);
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .mistake-title {
+    font-weight: 600;
+    color: #e05555;
+    font-size: 14.5px;
+    margin-bottom: 3px;
+  }
+  .mistake-desc {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    padding: 48px 24px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  .footer p {
+    color: var(--muted);
+    font-size: 13px;
+    max-width: 480px;
+    margin: 0 auto 12px;
+    text-align: center;
+  }
+  .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--white);
+    display: block;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .stat { border-bottom: 1px solid var(--border); }
+    .fuel-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="brand-label">Dr. Painkill</span>
+  <h1>The Energy<br/><span>Protocol</span></h1>
+  <p class="hero-sub">The free guide for people tired of being tired. Real biochemistry. No 16oz can required.</p>
+  <div class="study-badge">
+    <strong>BIOCHEMISTRY</strong> &nbsp;Cellular ATP Production &amp; Blood Sugar Regulation
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><span class="stat-num">3</span><span class="stat-label">Key Electrolytes</span></div>
+  <div class="stat"><span class="stat-num">60%</span><span class="stat-label">Of Your Brain Is Fat</span></div>
+  <div class="stat"><span class="stat-num">0</span><span class="stat-label">Stimulants Required</span></div>
+  <div class="stat"><span class="stat-num">FREE</span><span class="stat-label">Cost to You</span></div>
+</div>
+
+<div class="container">
+
+  <!-- SECTION 1: THE PROBLEM -->
+  <div class="section">
+    <p class="section-label">The Problem</p>
+    <h2>Your body isn't broken. It's running on <em>garbage.</em></h2>
+
+    <p>The exhaustion isn't a personality trait. It's not your age. It's not Monday. It's <strong>chemistry</strong> — and the chemistry running through your body right now is built to crash, not perform.</p>
+
+    <p>You're not tired because you're lazy. You're tired because you're slamming pure carbs at breakfast, drinking plain water on a depleted system, and then trying to caffeinate your way out of the hole. That isn't a strategy. That's a crisis on repeat.</p>
+
+    <div class="pull-quote">
+      <p>"Real energy isn't a can. It's chemistry."</p>
+    </div>
+
+    <ul class="check-list">
+      <li>Dehydrated and chugging plain water — which makes it worse</li>
+      <li>Eating pure carbs in the morning and crashing before lunch</li>
+      <li>Slamming energy drinks and riding pure cortisol</li>
+      <li>Wondering why coffee number four stopped working</li>
+      <li>Blaming Mondays for what your fuel is doing to you</li>
+    </ul>
+  </div>
+
+  <div class="arrow-divider"><span class="arrow">▼ ▼ ▼</span></div>
+
+  <!-- SECTION 2: ELECTROLYTES -->
+  <div class="section">
+    <p class="section-label">Step 1 — Electrolytes</p>
+    <h2>No sodium. No potassium. No <em>power.</em></h2>
+
+    <p>Your cells produce <strong>ATP</strong> — the energy currency of every single thing your body does. Move a finger, think a thought, digest lunch, blink. All ATP. And ATP does not get manufactured without three specific minerals doing the work at the cellular level: <strong>sodium, potassium, magnesium</strong>.</p>
+
+    <p>Most of you are running on fumes. You drink plain water all day, dilute the few electrolytes you have left, and then wonder why you feel like a wet sock by 2pm. The water isn't the problem. The water without minerals is the problem.</p>
+
+    <div class="pull-quote">
+      <p>"Plain water on a depleted body is just dilution."</p>
+    </div>
+
+    <table class="science-table">
+      <thead>
+        <tr><th>Mineral</th><th>Role</th><th>Where to Get It</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Sodium</td><td>Nerve signals</td><td>Sea salt, broth, olives, pickles</td></tr>
+        <tr><td>Potassium</td><td>Muscle &amp; heart</td><td>Avocado, potato, banana, leafy greens</td></tr>
+        <tr><td>Magnesium</td><td>ATP production</td><td>Pumpkin seeds, dark chocolate, almonds</td></tr>
+      </tbody>
+    </table>
+
+    <p>Add a pinch of salt to your morning water. Eat real food. Skip the pastel-colored sugar packets sold as "hydration."</p>
+  </div>
+
+  <div class="arrow-divider"><span class="arrow">▼ ▼ ▼</span></div>
+
+  <!-- SECTION 3: FAT -->
+  <div class="section">
+    <p class="section-label">Step 2 — Fat</p>
+    <h2>Eat fat. Your brain is <em>made of it.</em></h2>
+
+    <p>Sixty percent of your brain is fat. Read that again. The organ you are using right now to process this sentence is <strong>more than half fat by composition</strong>. So when you cut fat out of your diet to "stay lean," you are starving the most metabolically demanding tissue in your entire body.</p>
+
+    <p>Fat burns clean and slow. No spike. No crash. No cortisol roller coaster. Just steady, hour-after-hour fuel that keeps your brain online and your hands working. Your ancestors didn't run on bagels. They ran on meat, organs, fish, nuts, and whatever fatty thing they could find — and their energy was stable because their fuel was stable.</p>
+
+    <div class="pull-quote">
+      <p>"Sugar is sprint fuel. Fat is engine fuel."</p>
+    </div>
+
+    <div class="fuel-grid">
+      <div class="fuel-col">
+        <div class="fuel-header good">✓ Real Fuel</div>
+        <div class="fuel-item"><strong>Whole eggs</strong><span>Yolk and all. The yolk is the point.</span></div>
+        <div class="fuel-item"><strong>Avocado</strong><span>Monounsaturated fat, potassium, fiber</span></div>
+        <div class="fuel-item"><strong>Fatty fish</strong><span>Salmon, sardines, mackerel — omega-3s</span></div>
+        <div class="fuel-item"><strong>Nuts &amp; seeds</strong><span>Almonds, walnuts, pumpkin seeds</span></div>
+        <div class="fuel-item"><strong>Olive oil</strong><span>Extra virgin, on actual food</span></div>
+      </div>
+      <div class="fuel-col">
+        <div class="fuel-header bad">✗ Fake Fuel</div>
+        <div class="fuel-item"><strong>Bagels &amp; pastries</strong><span>Pure spike. 40 minutes of fake.</span></div>
+        <div class="fuel-item"><strong>Sugary cereal</strong><span>Dessert wearing a breakfast costume</span></div>
+        <div class="fuel-item"><strong>Granola bars</strong><span>Candy with a marketing budget</span></div>
+        <div class="fuel-item"><strong>Fruit juice</strong><span>Soda with better PR</span></div>
+        <div class="fuel-item"><strong>Energy drinks</strong><span>Cortisol in a can</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-divider"><span class="arrow">▼ ▼ ▼</span></div>
+
+  <!-- SECTION 4: BLOOD SUGAR -->
+  <div class="section">
+    <p class="section-label">Step 3 — Blood Sugar</p>
+    <h2>Stop riding the goddamn <em>rollercoaster.</em></h2>
+
+    <p>Eating pure carbs for breakfast is a war crime against your afternoon. The bagel sends your insulin to the moon. You feel amazing for forty minutes — productive, sharp, awake. Then your blood sugar collapses and you spend the next two hours hunting for snacks like a raccoon in a dumpster.</p>
+
+    <p>The fix is not "no carbs." The fix is <strong>never carbs alone</strong>. Pair every carb with protein and fat, and your body stops getting on the ride in the first place. Slower digestion. Slower glucose release. Steady energy. No crash.</p>
+
+    <div class="pull-quote">
+      <p>"You feel great for forty minutes. Then you crash like an unpaid intern."</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <div class="step-title">Front-load protein and fat</div>
+          <p class="step-desc">Eggs, smoked salmon, full-fat yogurt, leftover steak. Anything that isn't pure starch. Your first meal sets the day's hormonal tone — make it boring on purpose.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <div class="step-title">Never eat a naked carb</div>
+          <p class="step-desc">Toast alone is a problem. Toast with butter, eggs, and avocado is a meal. Every time you reach for something starchy, ask what's pinning it down.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <div class="step-title">Walk after eating</div>
+          <p class="step-desc">Ten minutes after a meal lowers the glucose spike measurably. Costs zero dollars. Most people would rather sit and complain about their energy.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <div class="step-title">Vinegar before carb-heavy meals</div>
+          <p class="step-desc">A tablespoon of apple cider vinegar in water before a carb-heavy meal blunts the glucose response. Tastes terrible. Works anyway.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div>
+          <div class="step-title">Save the carbs for after movement</div>
+          <p class="step-desc">Carbs after a workout get used by depleted muscle. Carbs after sitting on a couch get stored as fat and crash you out. Same food. Different outcome.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-divider"><span class="arrow">▼ ▼ ▼</span></div>
+
+  <!-- SECTION 5: ENERGY DRINKS -->
+  <div class="section">
+    <p class="section-label">The Mistakes</p>
+    <h2>Stop slamming the <em>can.</em></h2>
+
+    <p>Energy drinks work the same way being chased by a bear works. Cortisol up. Adrenaline up. Anxiety through the fucking roof. You feel sharp for an hour because your body thinks it's about to die. Then ninety minutes later you crash so hard you'd sell a kidney for a nap.</p>
+
+    <p>That isn't energy. That's <strong>borrowed panic</strong>. And you pay it back with interest every afternoon.</p>
+
+    <div class="mistake">
+      <span class="mistake-x">✗</span>
+      <div>
+        <div class="mistake-title">Energy drinks before noon</div>
+        <p class="mistake-desc">Your cortisol is already peaking in the morning. Stacking caffeine on top is like flooring the gas with the parking brake on. You burn the engine, not the fuel.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <span class="mistake-x">✗</span>
+      <div>
+        <div class="mistake-title">Coffee on an empty stomach</div>
+        <p class="mistake-desc">Spikes cortisol. Spikes anxiety. Wrecks your morning hormones. Eat protein and fat first, then drink the coffee. Same caffeine, completely different experience.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <span class="mistake-x">✗</span>
+      <div>
+        <div class="mistake-title">Plain water all day with nothing else</div>
+        <p class="mistake-desc">You aren't hydrating. You're diluting. Salt your water. Eat real food. Hydration is a mineral problem, not a volume problem.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <span class="mistake-x">✗</span>
+      <div>
+        <div class="mistake-title">Skipping fat to "stay lean"</div>
+        <p class="mistake-desc">Fat doesn't make you fat. Excess calories and blood sugar chaos make you fat. Cutting fat just guarantees you'll be hungry, foggy, and miserable.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <span class="mistake-x">✗</span>
+      <div>
+        <div class="mistake-title">Treating sleep as optional</div>
+        <p class="mistake-desc">No protocol works on five hours of sleep. None of this. You can't biohack your way out of cumulative sleep debt. Go to bed.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>This guide is for educational purposes. It is not medical advice. If you have persistent fatigue, see a doctor — there might be something real going on.</p>
+  <span class="footer-brand">Subscribe to Dr. Painkill.</span>
+</div>
+
+</body>
+</html>
