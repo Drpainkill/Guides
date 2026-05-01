@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>30 Days of Meat — Dr. Painkill</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0e0e0e;
+    --surface: #161616;
+    --surface2: #1e1e1e;
+    --border: #2a2a2a;
+    --text: #e8e8e8;
+    --muted: #888;
+    --accent: #e8e2d0;
+    --red: #c0392b;
+    --green: #1e7a3a;
+    --white: #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--bg);
+    padding: 80px 24px 60px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(232,226,208,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .brand-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--muted);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 10vw, 88px);
+    line-height: 0.95;
+    color: var(--white);
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+  }
+  .hero h1 span {
+    color: var(--accent);
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+  }
+  .hero-sub {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 480px;
+    margin: 0 auto 36px;
+    font-weight: 300;
+  }
+  .study-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 8px 16px;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+  .study-badge strong { color: var(--accent); }
+
+  /* ── STATS ROW ── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid var(--border);
+  }
+  .stat {
+    padding: 28px 16px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--white);
+    line-height: 1;
+    display: block;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    margin-top: 4px;
+    text-transform: uppercase;
+  }
+
+  /* ── CONTAINER ── */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ── ARROW ── */
+  .arrow-divider {
+    text-align: center;
+    padding: 12px 0;
+  }
+  .arrow-divider svg {
+    width: 52px;
+    opacity: 0.35;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    padding: 64px 0 48px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(34px, 6vw, 52px);
+    color: var(--white);
+    line-height: 1.0;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+  }
+  .section h2 em {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    color: var(--accent);
+  }
+  p {
+    color: #aaa;
+    margin-bottom: 16px;
+    font-size: 15.5px;
+  }
+  p strong { color: var(--text); }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    margin: 28px 0;
+    background: var(--surface);
+  }
+  .pull-quote p {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--accent);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ── CHECK LIST ── */
+  .check-list {
+    list-style: none;
+    margin: 20px 0;
+  }
+  .check-list li {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    color: #bbb;
+    align-items: flex-start;
+  }
+  .check-list li:last-child { border-bottom: none; }
+  .check-list li::before {
+    content: '✓';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ── SCIENCE TABLE ── */
+  .science-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+  }
+  .science-table th {
+    background: var(--surface2);
+    color: var(--muted);
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-bottom: 1px solid var(--border);
+  }
+  .science-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    color: #bbb;
+    vertical-align: top;
+  }
+  .science-table tr:last-child td { border-bottom: none; }
+  .science-table td:first-child { color: var(--text); font-weight: 500; }
+  .science-table td:nth-child(2) { color: var(--accent); font-weight: 600; width: 70px; }
+
+  /* ── BACTERIA / DUAL-COL TABLE ── */
+  .bact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 24px 0;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .bact-col {
+    background: var(--surface);
+  }
+  .bact-header {
+    padding: 12px 16px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .bact-header.bad { background: #2a0a0a; color: #e05555; }
+  .bact-header.good { background: #0a1e0a; color: #4caf50; }
+  .bact-item {
+    padding: 10px 16px;
+    border-top: 1px solid var(--border);
+    font-size: 13.5px;
+  }
+  .bact-item strong { display: block; color: var(--text); font-size: 13px; }
+  .bact-item span { color: var(--muted); font-size: 12px; }
+
+  /* ── PROTOCOL STEPS ── */
+  .steps {
+    margin: 24px 0;
+    counter-reset: steps;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    width: 40px;
+    height: 40px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .step-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 4px;
+    letter-spacing: 0.3px;
+  }
+  .step-desc {
+    font-size: 14.5px;
+    color: #999;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── MISTAKES ── */
+  .mistake {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .mistake:last-child { border-bottom: none; }
+  .mistake-x {
+    color: var(--red);
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .mistake-title {
+    font-weight: 600;
+    color: #e05555;
+    font-size: 14.5px;
+    margin-bottom: 3px;
+  }
+  .mistake-desc {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    padding: 48px 24px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  .footer p {
+    color: var(--muted);
+    font-size: 13px;
+    max-width: 480px;
+    margin: 0 auto 12px;
+    text-align: center;
+  }
+  .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--white);
+    display: block;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .stat { border-bottom: 1px solid var(--border); }
+    .bact-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="brand-label">Dr. Painkill</span>
+  <h1>30 Days of<br/><span>Only Meat.</span></h1>
+  <p class="hero-sub">What actually happens to your body when you eat nothing but steak, eggs, butter, and organ meat for a month.</p>
+  <div class="study-badge">
+    <strong>METABOLIC TIMELINE</strong> &nbsp;Day 1 to Day 30, Phase by Phase
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><span class="stat-num">30</span><span class="stat-label">Day Protocol</span></div>
+  <div class="stat"><span class="stat-num">0g</span><span class="stat-label">Carbs Per Day</span></div>
+  <div class="stat"><span class="stat-num">4-7</span><span class="stat-label">Days to Ketosis</span></div>
+  <div class="stat"><span class="stat-num">1</span><span class="stat-label">Fuel Switch</span></div>
+</div>
+
+<div class="container">
+
+  <!-- SECTION 1: DAY 1 -->
+  <div class="section">
+    <p class="section-label">Day 1</p>
+    <h2>The first days are <em>a bloodbath.</em></h2>
+
+    <p>Your body has been running on glucose its entire life. Strip carbs out overnight and the metabolic withdrawal is immediate, biological, and ugly.</p>
+
+    <p>Your liver burns through its <strong>last glycogen reserves</strong> in roughly 24 hours. Blood sugar crashes harder than a drunk uncle at a wedding. Your brain — which up until this morning was a glucose addict — starts panicking and demanding bread, pasta, anything sweet. You feel like a zombie wandering through a Costco at 2am.</p>
+
+    <div class="pull-quote">
+      <p>"This isn't hunger. This is your brain throwing a tantrum because its favorite drug just left the building."</p>
+    </div>
+
+    <ul class="check-list">
+      <li>Headaches as electrolytes flush out with glycogen-bound water</li>
+      <li>Brain fog while neurons wait for an alternative fuel source</li>
+      <li>Fatigue and irritability — the so-called "keto flu"</li>
+      <li>Sugar cravings that feel chemical, because they are</li>
+    </ul>
+  </div>
+
+  <div class="arrow-divider">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#e8e2d0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+  </div>
+
+  <!-- SECTION 2: THE SCIENCE -->
+  <div class="section">
+    <p class="section-label">The Science</p>
+    <h2>Day 4 to 7: your brain switches <em>fuel sources.</em></h2>
+
+    <p>Without dietary glucose, your liver starts converting fatty acids into <strong>ketone bodies</strong>. The primary one — beta-hydroxybutyrate — crosses the blood-brain barrier and feeds your neurons directly. It's a fuel your body has used for millions of years. It just hasn't had to in a while.</p>
+
+    <p>This is when the lights come back on. The fog lifts. Energy stops yo-yoing every two hours. Hunger flatlines. You stop thinking about bread every five seconds because your brain finally has a steady, non-glucose fuel supply.</p>
+
+    <div class="pull-quote">
+      <p>"You don't really feel ketosis. You feel the absence of the chaos that glucose dependency was creating."</p>
+    </div>
+
+    <table class="science-table">
+      <thead>
+        <tr><th>Ketone Body</th><th>Share</th><th>What It Does</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Beta-hydroxybutyrate</td><td>~78%</td><td>Primary brain fuel, crosses blood-brain barrier</td></tr>
+        <tr><td>Acetoacetate</td><td>~20%</td><td>Used by muscle and tissue, precursor to BHB</td></tr>
+        <tr><td>Acetone</td><td>~2%</td><td>Exhaled — the source of "keto breath"</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="arrow-divider">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#e8e2d0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+  </div>
+
+  <!-- SECTION 3: WHAT CHANGES -->
+  <div class="section">
+    <p class="section-label">Day 14</p>
+    <h2>Insulin on the floor. Inflammation <em>collapses.</em></h2>
+
+    <p>Two weeks in, your bloodwork starts telling a different story. With no carbs incoming, insulin production drops to baseline. Inflammatory markers — driven heavily by glucose spikes and seed oil consumption — fall off a cliff. This is when most people report their joints stop sounding like a broken Roomba.</p>
+
+    <p>Cholesterol panels get weirder. LDL often climbs, sometimes a lot. But the ratio that actually predicts cardiovascular risk — <strong>triglycerides over HDL</strong> — usually improves dramatically. Standard cholesterol numbers without context are misleading on this diet.</p>
+
+    <div class="bact-grid">
+      <div class="bact-col">
+        <div class="bact-header good">✓ Drops Dramatically</div>
+        <div class="bact-item"><strong>Fasting insulin</strong><span>Often by 50% or more</span></div>
+        <div class="bact-item"><strong>Triglycerides</strong><span>Fat-burning becomes default</span></div>
+        <div class="bact-item"><strong>Inflammation (CRP)</strong><span>Joint pain often subsides</span></div>
+        <div class="bact-item"><strong>Visceral fat</strong><span>The dangerous kind, around organs</span></div>
+        <div class="bact-item"><strong>Blood sugar variability</strong><span>No more spikes, no more crashes</span></div>
+      </div>
+      <div class="bact-col">
+        <div class="bact-header bad">✗ Rises or Gets Weird</div>
+        <div class="bact-item"><strong>LDL cholesterol</strong><span>Often climbs significantly</span></div>
+        <div class="bact-item"><strong>HDL cholesterol</strong><span>Usually rises — protective</span></div>
+        <div class="bact-item"><strong>Uric acid</strong><span>Spikes early, normalizes by week 4</span></div>
+        <div class="bact-item"><strong>Gut microbiome</strong><span>Diversity drops, fiber-eaters die off</span></div>
+        <div class="bact-item"><strong>Bowel frequency</strong><span>Drops sharply — not constipation</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-divider">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#e8e2d0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+  </div>
+
+  <!-- SECTION 4: THE TIMELINE -->
+  <div class="section">
+    <p class="section-label">The Timeline</p>
+    <h2>30 days, <em>phase by phase.</em></h2>
+
+    <p>Here is exactly what happens, and when. This is the standard biological progression — not a marketing brochure, not a transformation reel.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <div class="step-title">Day 1-3 — Glycogen depletion</div>
+          <p class="step-desc">Liver glycogen burns out within 24 hours. Headaches, fatigue, irritability, brain fog. You will feel like garbage. This is the worst phase, and it is temporary.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <div class="step-title">Day 4-7 — Ketosis kicks in</div>
+          <p class="step-desc">Liver starts producing beta-hydroxybutyrate from fat. Brain switches fuel. Mental clarity returns. Hunger drops dramatically. Sleep often improves before energy does.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <div class="step-title">Day 8-14 — Metabolic recalibration</div>
+          <p class="step-desc">Insulin sensitivity improves. Inflammation markers drop. Joint pain frequently subsides. Cravings for sweet and processed food noticeably weaken.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <div class="step-title">Day 15-21 — Fat adaptation</div>
+          <p class="step-desc">Mitochondria upregulate enzymes for fat oxidation. You become metabolically flexible — your body can pull energy from stored fat at will. Endurance often returns to baseline.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div>
+          <div class="step-title">Day 22-30 — Steady state</div>
+          <p class="step-desc">Body composition shifts visibly. Skin often clears. Energy is flat and reliable. Hunger feels almost optional. You are now a fat-adapted machine.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-divider">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#e8e2d0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+  </div>
+
+  <!-- SECTION 5: COMMON MISTAKES -->
+  <div class="section">
+    <p class="section-label">Common Mistakes</p>
+    <h2>How people <em>screw this up.</em></h2>
+
+    <div class="mistake">
+      <span class="mistake-x">✗</span>
+      <div>
+        <div class="mistake-title">Quitting during week 1</div>
+        <p class="mistake-desc">Most people quit during the worst phase — before their brain has switched to ketones. The misery is the transition, not the destination. Push through or don't start.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <span class="mistake-x">✗</span>
+      <div>
+        <div class="mistake-title">Ignoring electrolytes</div>
+        <p class="mistake-desc">Glycogen holds water, water holds sodium, potassium, and magnesium. When glycogen flushes, electrolytes flush with it. Salt your food aggressively or you will feel like death warmed over.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <span class="mistake-x">✗</span>
+      <div>
+        <div class="mistake-title">Eating only muscle meat</div>
+        <p class="mistake-desc">Steak alone is incomplete. Organ meats — liver especially — provide micronutrients you cannot get elsewhere on this diet. Skip them and you will deplete fast.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <span class="mistake-x">✗</span>
+      <div>
+        <div class="mistake-title">Panicking over LDL</div>
+        <p class="mistake-desc">LDL almost always rises on carnivore. Standalone LDL is a poor risk marker on a diet this high in saturated fat. The triglyceride-to-HDL ratio matters more, and that usually improves dramatically.</p>
+      </div>
+    </div>
+    <div class="mistake">
+      <span class="mistake-x">✗</span>
+      <div>
+        <div class="mistake-title">Treating it as forever</div>
+        <p class="mistake-desc">30 days is an experiment. Long-term carnivore is a different conversation, and the long-term data is genuinely thin. Run the protocol, learn what your body does, then decide.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>This guide is educational, not medical advice. Talk to a doctor before any major dietary change — especially if you have kidney issues, gallbladder issues, a history of disordered eating, or are on medications.</p>
+  <span class="footer-brand">Subscribe to Dr. Painkill.</span>
+</div>
+
+</body>
+</html>
