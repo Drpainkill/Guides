@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONE PATCH OF lip | Dr. Painkill</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style> block.  │
+  │  To build a guide: copy this file, keep the <style> verbatim, and   │
+  │  swap the content inside each component. Drop components you don't   │
+  │  need; keep arrow dividers between major sections.                   │
+  │  Every component below appears exactly once as a reference copy.     │
+  └─────────────────────────────────────────────────────────────────────┘
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Guide Title] — Dr. Painkill</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0e0e0e;
+    --surface: #161616;
+    --surface2: #1e1e1e;
+    --border: #2a2a2a;
+    --text: #e8e8e8;
+    --muted: #888;
+    --accent: #e8e2d0;
+    --red: #c0392b;
+    --green: #1e7a3a;
+    --white: #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--bg);
+    padding: 80px 24px 60px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(232,226,208,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .brand-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--muted);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 10vw, 88px);
+    line-height: 0.95;
+    color: var(--white);
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+  }
+  .hero h1 span {
+    color: var(--accent);
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+  }
+  .hero-sub {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 480px;
+    margin: 0 auto 36px;
+    font-weight: 300;
+  }
+  .study-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 8px 16px;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+  .study-badge strong { color: var(--accent); }
+
+  /* ── STATS ROW ── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid var(--border);
+  }
+  .stat {
+    padding: 28px 16px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--white);
+    line-height: 1;
+    display: block;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    margin-top: 4px;
+    text-transform: uppercase;
+  }
+
+  /* ── CONTAINER ── */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ── ARROW ── */
+  .arrow-divider {
+    text-align: center;
+    padding: 12px 0;
+  }
+  .arrow-divider img {
+    width: 52px;
+    opacity: 0.35;
+    filter: invert(1);
+  }
+
+  /* ── SECTION ── */
+  .section {
+    padding: 64px 0 48px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(34px, 6vw, 52px);
+    color: var(--white);
+    line-height: 1.0;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+  }
+  .section h2 em {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    color: var(--accent);
+  }
+  p {
+    color: #aaa;
+    margin-bottom: 16px;
+    font-size: 15.5px;
+  }
+  p strong { color: var(--text); }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    margin: 28px 0;
+    background: var(--surface);
+  }
+  .pull-quote p {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--accent);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ── CHECK LIST ── */
+  .check-list {
+    list-style: none;
+    margin: 20px 0;
+  }
+  .check-list li {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    color: #bbb;
+    align-items: flex-start;
+  }
+  .check-list li:last-child { border-bottom: none; }
+  .check-list li::before {
+    content: '✓';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ── SCIENCE TABLE ── */
+  .science-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+  }
+  .science-table th {
+    background: var(--surface2);
+    color: var(--muted);
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-bottom: 1px solid var(--border);
+  }
+  .science-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    color: #bbb;
+    vertical-align: top;
+  }
+  .science-table tr:last-child td { border-bottom: none; }
+  .science-table td:first-child { color: var(--text); font-weight: 500; }
+  .science-table td:nth-child(2) { color: var(--accent); font-weight: 600; width: 70px; }
+
+  /* ── COMPARISON GRID (bad vs good) ── */
+  .bact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 24px 0;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .bact-col {
+    background: var(--surface);
+  }
+  .bact-header {
+    padding: 12px 16px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .bact-header.bad { background: #2a0a0a; color: #e05555; }
+  .bact-header.good { background: #0a1e0a; color: #4caf50; }
+  .bact-item {
+    padding: 10px 16px;
+    border-top: 1px solid var(--border);
+    font-size: 13.5px;
+  }
+  .bact-item strong { display: block; color: var(--text); font-size: 13px; }
+  .bact-item span { color: var(--muted); font-size: 12px; }
+
+  /* ── PROTOCOL STEPS ── */
+  .steps {
+    margin: 24px 0;
+    counter-reset: steps;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    width: 40px;
+    height: 40px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .step-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 4px;
+    letter-spacing: 0.3px;
+  }
+  .step-desc {
+    font-size: 14.5px;
+    color: #999;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── MISTAKES ── */
+  .mistake {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .mistake:last-child { border-bottom: none; }
+  .mistake-x {
+    color: var(--red);
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .mistake-title {
+    font-weight: 600;
+    color: #e05555;
+    font-size: 14.5px;
+    margin-bottom: 3px;
+  }
+  .mistake-desc {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    padding: 48px 24px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  .footer p {
+    color: var(--muted);
+    font-size: 13px;
+    max-width: 480px;
+    margin: 0 auto 12px;
+    text-align: center;
+  }
+  .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--white);
+    display: block;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .stat { border-bottom: 1px solid var(--border); }
+    .bact-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <span class="brand-label">Dr. Painkill</span>
+  <h1>ONE PATCH OF<br/><span>lip</span></h1>
+  <p class="hero-sub">79 percent of pouch users have a lesion, and it is sitting in the exact spot you keep parking it.</p>
+  <div class="study-badge">
+    <strong>PEER REVIEWED</strong> &nbsp;Oral Diseases, 2026
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat"><span class="stat-num">79%</span><span class="stat-label">HAD A LESION</span></div>
+  <div class="stat"><span class="stat-num">126</span><span class="stat-label">MOUTHS CHECKED</span></div>
+  <div class="stat"><span class="stat-num">0</span><span class="stat-label">EXTRA CAVITIES</span></div>
+  <div class="stat"><span class="stat-num">6</span><span class="stat-label">YEARS, NO DECAY</span></div>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <p class="section-label">THE 2026 EXAM</p>
+    <h2>Your lip is keeping <em>score</em></h2>
+    <p>Dentists at nine clinics examined 126 nicotine pouch users, 63 tobacco snus users and 83 non users, all aged 18 to 30. They checked every mouth for redness, ulcers, swelling, thickened white patches, bone defects and gum recession. Lesions showed up in 79 percent of the pouch users.</p>
+    <p>Almost all of it was redness (erythema) right where the pouch sits, plus more reported mouth symptoms. Tobacco snus users had lesions even more often, 89 percent, but theirs skewed toward thick white patches. The authors' read: pouches cause broader tissue reactions than snus.</p>
+    <p>Here is the part that matters just as much. Across use of up to 6 years, the same study found no increase in cavities and no increase in gum disease. This is not your teeth rotting or your gums receding. It is one patch of lining getting irritated daily.</p>
+    <div class="pull-quote"><p>"It is not rot. It is one patch of lip getting shit on, every day, for years."</p></div>
+    <ul class="check-list">
+      <li>79 percent of pouch users had an oral lesion</li>
+      <li>Mostly redness at the exact placement spot, not decay</li>
+      <li>No increase in cavities over up to 6 years</li>
+      <li>No increase in gum disease over that time</li>
+      <li>Snus users had lesions more often (89 percent), skewed to white patches</li>
+    </ul>
+  </div>
+<div class="arrow-divider"><img src="data:image/png;base64,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" alt=""></div>
+  <div class="section">
+    <p class="section-label">THE MECHANISM</p>
+    <h2>Tissue built to <em>move</em></h2>
+    <p>The mucosa inside your lip is thin, wet tissue designed to flex and get rinsed by saliva nonstop. It is not skin. It has no thick protective outer layer. Wedge a pouch between your upper lip and gum and you pin that tissue against the same square centimeter of gum for minutes to hours at a time, pouch after pouch.</p>
+    <p>While it sits there it leaks its contents, nicotine plus flavor and pH buffers, straight into the lining at point blank range. The tissue reacts the way any tissue does to a constant chemical and mechanical irritant: blood vessels dilate so the spot goes red (that is the erythema), and fluid moves in so it swells. That is the 79 percent, and it almost always lands on the exact patch where the pouch lives.</p>
+    <p>Keep going and the irritation stops being temporary. The lining thickens and turns pale, a white patch that is basically a callus, the same armor a guitarist grows on a fingertip or a worn work boot wears into leather. The systematic review (Rungraungrayabkul et al., BMC Oral Health 2024) found these changes scaled with dose: more pouches a day and more years meant more change. That review pooled only 3 small studies, 190 people, all rated high risk of bias, so treat it as a direction, not a hard number.</p>
+    <p>The same review logged the quieter complaints too: dry mouth, soreness, gum blisters and a strange jaw sensation. All of it clusters at or near the placement spot. That is the whole tell. This is a contact problem, not a whole mouth disease, which is exactly why moving the pouch and cutting the hours is the lever that works.</p>
+    <table class="science-table"><thead><tr><th>Item</th><th>Value</th><th>Mechanism</th></tr></thead><tbody>
+      <tr><td>Placement spot</td><td>~1 cm</td><td>Pouch pins tissue against one patch of gum for hours</td></tr>
+      <tr><td>Redness (erythema)</td><td>79% of users</td><td>Vessels dilate at the contact point, lining inflames</td></tr>
+      <tr><td>White patches</td><td>Dose linked</td><td>Chronic irritation thickens the lining into a callus</td></tr>
+      <tr><td>Cavities</td><td>No increase</td><td>Decay is driven by sugar and acid, not pouch contact</td></tr>
+      <tr><td>Gum disease</td><td>No increase</td><td>Not found over up to 6 years in the 2026 study</td></tr>
+      <tr><td>Reach of change</td><td>More = more</td><td>Lesions track pouches per day and years used</td></tr>
+    </tbody></table>
+  </div>
+<div class="arrow-divider"><img src="data:image/png;base64,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" alt=""></div>
+  <div class="section">
+    <p class="section-label">THE HONEST SPLIT</p>
+    <h2>What it <em>does</em>, what it doesn't</h2>
+    <p>The comment war on these runs hot in both directions. Here is the split the evidence actually supports, and nothing past it.</p>
+    <p>The irritation is real and it is local. The decay and disease panic is not what the data found. Keep those two columns separate and you will read your own mouth correctly.</p>
+    <div class="bact-grid">
+      <div class="bact-col">
+        <div class="bact-header bad">✗ WHAT THE STUDY PINNED ON THEM</div>
+        <div class="bact-item"><strong>Redness</strong><span>Erythema at the placement spot in most users</span></div>
+        <div class="bact-item"><strong>Swelling</strong><span>Fluid pushed into the irritated lining</span></div>
+        <div class="bact-item"><strong>White patches</strong><span>Thickened callus like tissue, dose linked</span></div>
+        <div class="bact-item"><strong>Mouth symptoms</strong><span>Soreness, dry mouth, blisters, odd jaw sensation</span></div>
+      </div>
+      <div class="bact-col">
+        <div class="bact-header good">✓ WHAT IT CLEARED THEM OF</div>
+        <div class="bact-item"><strong>Cavities</strong><span>No increase over use of up to 6 years</span></div>
+        <div class="bact-item"><strong>Gum disease</strong><span>No increase found in the 2026 study</span></div>
+        <div class="bact-item"><strong>Gum recession</strong><span>Not shown, do not confuse a lesion with recession</span></div>
+        <div class="bact-item"><strong>Tooth rot</strong><span>No evidence the pouch itself decays teeth</span></div>
+      </div>
+    </div>
+  </div>
+<div class="arrow-divider"><img src="data:image/png;base64,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" alt=""></div>
+  <div class="section">
+    <p class="section-label">THE QUIT PLAN</p>
+    <h2>Cut the <em>contact</em></h2>
+    <p>The lesions track dose and contact time, so the entire plan is lowering both. These cutback steps are practical, built from that dose response, not from a pouch specific quit trial. Treat them as a sensible structure, not a tested protocol.</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div><div class="step-title">Flip your lip and map it</div><p class="step-desc">Pull your upper lip out in good light and look at the exact spot the pouch lives. Note any redness, swelling or pale patch. This is your baseline, so weeks later you can tell healing from new damage instead of guessing.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div><div class="step-title">Count for a week first</div><p class="step-desc">Before you change anything, log every pouch for seven days, including the strength in mg. You cannot cut a number you have never measured, and the honest count is almost always higher than the one in your head.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div><div class="step-title">Protect the first hour</div><p class="step-desc">No pouch in the first hour after waking. That single window breaks the automatic wake and load habit and proves to you that the craving passes on its own without one in.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div><div class="step-title">Never sleep with one in</div><p class="step-desc">Pull it before bed, every night, no exceptions. Left in overnight it marinates one spot for six to eight unbroken hours with almost no saliva clearance, the worst possible contact time, and does nothing but feed the habit while you are unconscious.</p></div></div>
+      <div class="step"><div class="step-num">5</div><div><div class="step-title">Step the count down</div><p class="step-desc">Each week, drop your daily total by one or two from the logged baseline. Slow and boring beats a dramatic quit you abandon by Friday, because a plan you actually keep is the only one that lowers the dose.</p></div></div>
+      <div class="step"><div class="step-num">6</div><div><div class="step-title">Then step the strength down</div><p class="step-desc">Once the count is lower, switch to a lower mg pouch. Cutting count and strength at the same time usually spikes cravings and sends you straight back to baseline, so stagger them, count first, then strength.</p></div></div>
+      <div class="step"><div class="step-num">7</div><div><div class="step-title">Move the spot, shorten the stay</div><p class="step-desc">While you still use them, stop reloading the exact same patch and stop leaving one in past the point you feel the nicotine. Less contact time on any one piece of lining is directly less irritation on it.</p></div></div>
+      <div class="step"><div class="step-num">8</div><div><div class="step-title">Run a three week healing check</div><p class="step-desc">After you cut back, a healthy spot settles down, so recheck it in the mirror. If it is calming, you are winning. If a sore or patch is still sitting there at three weeks, that is a doctor visit, not a wait and see.</p></div></div>
+    </div>
+  </div>
+<div class="arrow-divider"><img src="data:image/png;base64,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" alt=""></div>
+  <div class="section">
+    <p class="section-label">COMMON MISTAKES</p>
+    <h2>How people make it <em>worse</em></h2>
+    <div class="mistake"><span class="mistake-x">✗</span><div><div class="mistake-title">Sleeping with a pouch in</div><p class="mistake-desc">People leave one in overnight and treat it as harmless rest time. It is the longest unbroken marinate your lip gets, hours of contact on one spot with the saliva clearance that normally protects it switched off.</p></div></div>
+    <div class="mistake"><span class="mistake-x">✗</span><div><div class="mistake-title">Parking it in the same spot</div><p class="mistake-desc">Loading every pouch into the identical patch of gum concentrates all the irritation in one place. That is precisely where the redness and the white patches show up first.</p></div></div>
+    <div class="mistake"><span class="mistake-x">✗</span><div><div class="mistake-title">Reading tobacco free as harmless</div><p class="mistake-desc">The label is accurate, the conclusion is not. It is still nicotine absorbed through the mucosa, still habit forming, and your lip still reacts to it daily.</p></div></div>
+    <div class="mistake"><span class="mistake-x">✗</span><div><div class="mistake-title">Mistaking the 79 percent for gum disease</div><p class="mistake-desc">People see the number and assume their gums are receding or rotting. The study found no extra gum disease and no extra cavities, the 79 percent is tissue irritation at the contact spot and nothing more.</p></div></div>
+    <div class="mistake"><span class="mistake-x">✗</span><div><div class="mistake-title">Cutting strength and count at once</div><p class="mistake-desc">Dropping both together spikes cravings hard and usually ends in a full relapse to baseline. Stagger them so each change is small enough to actually hold.</p></div></div>
+    <div class="mistake"><span class="mistake-x">✗</span><div><div class="mistake-title">Waiting out a sore that will not heal</div><p class="mistake-desc">Assuming every patch fades on its own means a real problem gets ignored for weeks. Anything past three weeks is a dentist or GP visit, not another mirror check.</p></div></div>
+  </div>
+<div class="arrow-divider"><img src="data:image/png;base64,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" alt=""></div>
+  <div class="section">
+    <p class="section-label">RED FLAGS</p>
+    <h2>When to stop <em>guessing</em></h2>
+    <p>Most of this is irritation that eases when the contact eases. A few signs mean you stop managing it yourself and get a professional eye on it.</p>
+    <p>The NHS rule for mouth ulcers is worth stealing wholesale: any sore, ulcer or patch that has not healed in three weeks gets looked at by a dentist or GP. Three weeks is the line because ordinary irritation resolves well inside it, so anything that outlasts it is no longer just the pouch. A dentist can tell a harmless callus from something that needs a closer look in minutes. Going early costs you nothing.</p>
+    <ul class="check-list">
+      <li>A sore, ulcer or patch that has not healed in 3 weeks</li>
+      <li>A white patch that will not wipe away and keeps changing</li>
+      <li>Pain or soreness that worsens instead of easing after you cut back</li>
+    </ul>
+  </div>
+<div class="arrow-divider"><img src="data:image/png;base64,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" alt=""></div>
+  <div class="section">
+    <p class="section-label">THE OTHER SIDE</p>
+    <h2>If you are quitting <em>smoking</em></h2>
+    <p>The strongest honest point in the pouch defense: for a current smoker, switching to tobacco free pouches is a real step down in harm. You are no longer inhaling combustion products into your lungs, and that trade genuinely matters.</p>
+    <p>What it gets right ends there. Tobacco free is true, but it is not nicotine free. You are still dosing an addictive drug through the lining of your mouth, and the lining still reacts. If you switched to get off cigarettes, treat the pouch as a bridge, not a destination, and make the next step off nicotine entirely.</p>
+    <p>The evidence is also young. Most of it is cross sectional snapshots, not long follow ups, so the real long term picture is simply unknown. No extra cavities in six years is reassuring and honest, but it is not the same sentence as safe forever.</p>
+    <div class="pull-quote"><p>"Tobacco free is true. Nicotine free it is not."</p></div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>This guide is based on published research, not medical advice. For any mouth sore, lesion that will not heal, or nicotine dependence, see a dentist or doctor.</p>
+  <span class="footer-brand">Subscribe to Dr. Painkill.</span>
+</div>
+
+</body>
+</html>
