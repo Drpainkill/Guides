@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YOUR BRAIN THINKS IT'S noon | Dr. Painkill</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style> block.  │
+  │  To build a guide: copy this file, keep the <style> verbatim, and   │
+  │  swap the content inside each component. Drop components you don't   │
+  │  need; keep arrow dividers between major sections.                   │
+  │  Every component below appears exactly once as a reference copy.     │
+  └─────────────────────────────────────────────────────────────────────┘
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Guide Title] — Dr. Painkill</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0e0e0e;
+    --surface: #161616;
+    --surface2: #1e1e1e;
+    --border: #2a2a2a;
+    --text: #e8e8e8;
+    --muted: #888;
+    --accent: #e8e2d0;
+    --red: #c0392b;
+    --green: #1e7a3a;
+    --white: #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--bg);
+    padding: 80px 24px 60px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(232,226,208,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .brand-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--muted);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 10vw, 88px);
+    line-height: 0.95;
+    color: var(--white);
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+  }
+  .hero h1 span {
+    color: var(--accent);
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+  }
+  .hero-sub {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 480px;
+    margin: 0 auto 36px;
+    font-weight: 300;
+  }
+  .study-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 8px 16px;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+  .study-badge strong { color: var(--accent); }
+
+  /* ── STATS ROW ── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid var(--border);
+  }
+  .stat {
+    padding: 28px 16px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--white);
+    line-height: 1;
+    display: block;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    margin-top: 4px;
+    text-transform: uppercase;
+  }
+
+  /* ── CONTAINER ── */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ── ARROW ── */
+  .arrow-divider {
+    text-align: center;
+    padding: 12px 0;
+  }
+  .arrow-divider img {
+    width: 52px;
+    opacity: 0.35;
+    filter: invert(1);
+  }
+
+  /* ── SECTION ── */
+  .section {
+    padding: 64px 0 48px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(34px, 6vw, 52px);
+    color: var(--white);
+    line-height: 1.0;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+  }
+  .section h2 em {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    color: var(--accent);
+  }
+  p {
+    color: #aaa;
+    margin-bottom: 16px;
+    font-size: 15.5px;
+  }
+  p strong { color: var(--text); }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    margin: 28px 0;
+    background: var(--surface);
+  }
+  .pull-quote p {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--accent);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ── CHECK LIST ── */
+  .check-list {
+    list-style: none;
+    margin: 20px 0;
+  }
+  .check-list li {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    color: #bbb;
+    align-items: flex-start;
+  }
+  .check-list li:last-child { border-bottom: none; }
+  .check-list li::before {
+    content: '✓';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ── SCIENCE TABLE ── */
+  .science-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+  }
+  .science-table th {
+    background: var(--surface2);
+    color: var(--muted);
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-bottom: 1px solid var(--border);
+  }
+  .science-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    color: #bbb;
+    vertical-align: top;
+  }
+  .science-table tr:last-child td { border-bottom: none; }
+  .science-table td:first-child { color: var(--text); font-weight: 500; }
+  .science-table td:nth-child(2) { color: var(--accent); font-weight: 600; width: 70px; }
+
+  /* ── COMPARISON GRID (bad vs good) ── */
+  .bact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 24px 0;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .bact-col {
+    background: var(--surface);
+  }
+  .bact-header {
+    padding: 12px 16px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .bact-header.bad { background: #2a0a0a; color: #e05555; }
+  .bact-header.good { background: #0a1e0a; color: #4caf50; }
+  .bact-item {
+    padding: 10px 16px;
+    border-top: 1px solid var(--border);
+    font-size: 13.5px;
+  }
+  .bact-item strong { display: block; color: var(--text); font-size: 13px; }
+  .bact-item span { color: var(--muted); font-size: 12px; }
+
+  /* ── PROTOCOL STEPS ── */
+  .steps {
+    margin: 24px 0;
+    counter-reset: steps;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    width: 40px;
+    height: 40px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .step-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 4px;
+    letter-spacing: 0.3px;
+  }
+  .step-desc {
+    font-size: 14.5px;
+    color: #999;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── MISTAKES ── */
+  .mistake {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .mistake:last-child { border-bottom: none; }
+  .mistake-x {
+    color: var(--red);
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .mistake-title {
+    font-weight: 600;
+    color: #e05555;
+    font-size: 14.5px;
+    margin-bottom: 3px;
+  }
+  .mistake-desc {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    padding: 48px 24px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  .footer p {
+    color: var(--muted);
+    font-size: 13px;
+    max-width: 480px;
+    margin: 0 auto 12px;
+    text-align: center;
+  }
+  .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--white);
+    display: block;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .stat { border-bottom: 1px solid var(--border); }
+    .bact-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <span class="brand-label">Dr. Painkill</span>
+  <h1>YOUR BRAIN THINKS IT'S<br/><span>noon</span></h1>
+  <p class="hero-sub">Your phone is running two separate attacks on your sleep, and night mode only blunts part of one of them.</p>
+  <div class="study-badge">
+    <strong>PEER REVIEWED</strong> &nbsp;Sleep Medicine, 2021
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat"><span class="stat-num">2</span><span class="stat-label">HORMONES HIJACKED</span></div>
+  <div class="stat"><span class="stat-num">60</span><span class="stat-label">MINUTES SCREEN FREE</span></div>
+  <div class="stat"><span class="stat-num">0</span><span class="stat-label">PHONES ON THE NIGHTSTAND</span></div>
+  <div class="stat"><span class="stat-num">1,000+</span><span class="stat-label">ADULTS STUDIED</span></div>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <p class="section-label">THE STUDY</p>
+    <h2>What the phone is <em>actually</em> doing</h2>
+    <p>The 2021 paper in Sleep Medicine looked at over a thousand adults and found that phone use at bedtime went hand in hand with worse sleep quality. That is an association, not a lab experiment, so it cannot prove the phone is the only cause. But it lines up with mechanisms physiologists have mapped for decades, and those mechanisms tell you exactly where to cut.</p>
+    <p>There is not one problem here. There are four, stacked. The light tells your brain clock it is still daytime. The content fires your stress response. The feed is built so there is never a natural place to stop. And the device stays within arm's reach all night, ready to pull you back the second you surface.</p>
+    <p>Fixing only one of these is why most people say they tried and it did nothing. Night mode handles part of the light problem and none of the other three.</p>
+    <div class="pull-quote"><p>"You did not lose sleep to one bad habit. You lost it to a four man crew working the same shift."</p></div>
+    <ul class="check-list">
+      <li>Light: screen glow reaches the cells in your eye that set your body clock</li>
+      <li>Arousal: threatening or infuriating content switches on the fight or flight system</li>
+      <li>Displacement: an endless feed eats the time you would have spent asleep</li>
+      <li>Proximity: a phone by the bed invites checking every time you half wake</li>
+    </ul>
+  </div>
+<div class="arrow-divider"><img src="data:image/png;base64,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" alt=""></div>
+  <div class="section">
+    <p class="section-label">THE SCIENCE</p>
+    <h2>Two systems, both <em>hijacked</em></h2>
+    <p>The light attack starts in a small population of retinal cells called intrinsically photosensitive retinal ganglion cells. They do not help you see. They contain a pigment called melanopsin, which is most sensitive to blue light at roughly 480 nanometers, and their job is to measure ambient brightness. They wire straight into the suprachiasmatic nucleus, a cluster of neurons above where the optic nerves cross. That cluster is your master clock. When it gets a strong light signal in the evening, it reads that as late daytime and shifts the whole schedule later.</p>
+    <p>The clock talks to the pineal gland, which releases melatonin once the clock decides it is night. Melatonin is not a knockout drug. It is a timing signal. It tells your organs that night has started, helps drop your core body temperature, and opens what sleep researchers call the sleep gate. Light in the evening suppresses that release and pushes it later. Think of melatonin as the signal that the bar is closing. Screen light keeps flicking the lights back on, so nobody leaves.</p>
+    <p>The second attack runs on your threat system. When you read something that registers as danger or insult, your amygdala flags it and the sympathetic nervous system fires within seconds: adrenaline, faster heart rate, sharper alertness. A slower arm, the hypothalamic pituitary adrenal axis, can follow up with cortisol over the next several minutes. Cortisol normally sits near its lowest point around the middle of the night and climbs toward morning to wake you. Content that keeps provoking a stress response works against that low point, though how much a single feed session moves cortisol in real life has not been pinned down well.</p>
+    <p>Arousal is the part that matters most for falling asleep. Sleep needs the body to downshift: slower heart rate, quieter brain, lower muscle tension. Hyperarousal, a body and mind stuck in alert mode, is one of the core features of chronic insomnia. Every outrage post is a small shove back toward alert.</p>
+    <p>Then there is the feed itself. Infinite scroll with unpredictable rewards is a textbook variable reward schedule, the same pattern that makes slot machines hard to walk away from. There is no last page, so the stopping decision has to come from you, at the exact hour your self control is weakest.</p>
+    <div class="pull-quote"><p>"Melatonin is the bar closing. Your screen keeps flicking the lights back on."</p></div>
+    <table class="science-table"><thead><tr><th>Player</th><th>Value</th><th>What it does to you at night</th></tr></thead><tbody>
+      <tr><td>Melanopsin cells</td><td>~480 nm</td><td>Detect blue light most strongly and report daytime to your clock</td></tr>
+      <tr><td>Suprachiasmatic nucleus</td><td>24 h</td><td>Master clock. Evening light shifts its schedule later</td></tr>
+      <tr><td>Melatonin</td><td>Delayed</td><td>Night signal from the pineal gland, suppressed and pushed later by light</td></tr>
+      <tr><td>Adrenaline</td><td>Seconds</td><td>Fast spike from threatening content: heart rate up, alertness up</td></tr>
+      <tr><td>Cortisol</td><td>Minutes</td><td>Slower stress hormone that should be near its lowest point at night</td></tr>
+      <tr><td>The feed</td><td>Endless</td><td>Variable rewards with no stopping point, so sleep gets pushed back</td></tr>
+    </tbody></table>
+  </div>
+<div class="arrow-divider"><img src="data:image/png;base64,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" alt=""></div>
+  <div class="section">
+    <p class="section-label">THE SPLIT</p>
+    <h2>What your last hour should <em>look</em> like</h2>
+    <p>The goal for the last hour is low light, low stakes, and a clear ending. Anything that is bright, provoking, or endless belongs on the left.</p>
+    <p>Notice that most of the right column is not about blue light at all. It is about removing the stress response and giving your brain a point where the activity is done.</p>
+    <div class="bact-grid">
+      <div class="bact-col">
+        <div class="bact-header bad">✗ Keeps you wired</div>
+        <div class="bact-item"><strong>Full brightness feed</strong><span>Strong light signal aimed straight at your clock cells</span></div>
+        <div class="bact-item"><strong>News and comment sections</strong><span>Threat and outrage on demand, adrenaline right after</span></div>
+        <div class="bact-item"><strong>Infinite scroll</strong><span>No last page, so no natural moment to stop</span></div>
+        <div class="bact-item"><strong>Phone on the pillow</strong><span>Notifications and late checks fragment the night</span></div>
+        <div class="bact-item"><strong>Bright overhead lights</strong><span>Your whole room is also telling your clock it is daytime</span></div>
+      </div>
+      <div class="bact-col">
+        <div class="bact-header good">✓ Lets you land</div>
+        <div class="bact-item"><strong>Paper book</strong><span>No backlight, a chapter gives you a built in stopping point</span></div>
+        <div class="bact-item"><strong>Dim warm lamp</strong><span>Low, warm light keeps the clock signal weak</span></div>
+        <div class="bact-item"><strong>Audio with the screen off</strong><span>Your ears get content, your clock cells get darkness</span></div>
+        <div class="bact-item"><strong>Phone charging across the room</strong><span>Checking now takes a decision instead of a reflex</span></div>
+        <div class="bact-item"><strong>Tomorrow's list on paper</strong><span>Parks the open loops so they stop circling</span></div>
+      </div>
+    </div>
+  </div>
+<div class="arrow-divider"><img src="data:image/png;base64,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" alt=""></div>
+  <div class="section">
+    <p class="section-label">THE PROTOCOL</p>
+    <h2>The <em>wind down</em>, step by step</h2>
+    <p>Run these in order. The first three do the heavy lifting. The rest close the gaps that make people quit.</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div><div class="step-title">Set a hard cutoff 60 minutes before bed</div><p class="step-desc">Pick a time one hour before you want to be asleep and put a recurring alarm on it labeled with the instruction, not a vague reminder. When it goes off, screens are done. This gives your melatonin release room to start on schedule and gives your stress response time to settle before you lie down.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div><div class="step-title">Charge the phone outside arm's reach</div><p class="step-desc">Plug it in across the room or in another room entirely, and buy a cheap alarm clock if the phone was your alarm. Do this at the cutoff, not at lights out. Distance turns checking from a reflex into a decision, and at midnight you will lose to reflexes every time.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div><div class="step-title">Dim the whole house, not just the screen</div><p class="step-desc">At the cutoff, switch off overhead lights and use one or two low, warm lamps. Your clock cells respond to total light hitting your eyes, so a dark screen in a blazing kitchen solves nothing. Dim and warm keeps the daytime signal as weak as possible.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div><div class="step-title">If you must use the screen, make it dim, warm and far</div><p class="step-desc">Drop brightness to the lowest you can read, turn on the warm color setting, and hold the device at arm's length rather than inches from your face. Brightness and distance matter as much as color. Keep this to something with an ending, a single message or one article, never a feed.</p></div></div>
+      <div class="step"><div class="step-num">5</div><div><div class="step-title">Cut the content that triggers you first</div><p class="step-desc">After the cutoff, no news, no comment sections, no work email, no arguments. These are the inputs most likely to fire your threat system and spike adrenaline. If something must be answered, write the reply on paper and send it in the morning.</p></div></div>
+      <div class="step"><div class="step-num">6</div><div><div class="step-title">Dump tomorrow onto paper</div><p class="step-desc">Spend five minutes writing down tomorrow's tasks and anything unresolved. Unfinished business keeps your brain in planning mode, which is a form of arousal. Getting it onto paper tells your brain the loop is stored somewhere safe.</p></div></div>
+      <div class="step"><div class="step-num">7</div><div><div class="step-title">Get bright light within an hour of waking</div><p class="step-desc">Get outside for 10 to 20 minutes in the morning, longer if it is overcast. Strong morning light anchors your clock earlier and makes you sleepy at a more sensible hour that night. Evening light pushes the clock late, morning light pulls it back.</p></div></div>
+      <div class="step"><div class="step-num">8</div><div><div class="step-title">If you wake up, leave the phone alone</div><p class="step-desc">Do not check the time and do not open anything. If you have been lying awake for what feels like 20 minutes, get up, sit somewhere dim, do something boring, and return when you feel sleepy. This is a standard part of insomnia therapy, and it trains your brain to link bed with sleep instead of with scrolling.</p></div></div>
+    </div>
+  </div>
+<div class="arrow-divider"><img src="data:image/png;base64,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" alt=""></div>
+  <div class="section">
+    <p class="section-label">IS IT WORKING</p>
+    <h2>How to know it's <em>working</em></h2>
+    <p>The first thing most people notice is that falling asleep stops feeling like a negotiation. The racing, replaying, arguing with strangers in your head quiets down, because you stopped feeding it material right before bed. Mornings start to feel less like being dragged out of a pit.</p>
+    <p>Track it without a screen. Keep a notebook by the bed and each morning write down roughly when the lights went out, roughly how long it took to fall asleep, and a score from 1 to 10 for how rested you feel. Do not watch the clock during the night to get exact numbers. Rough is fine and clock watching makes it worse. Look at the trend across a few weeks, not one night.</p>
+    <p>Get checked by a doctor rather than pushing harder if you snore loudly, gasp or stop breathing in your sleep, feel exhausted no matter how long you sleep, have trouble sleeping most nights for months, or if poor sleep comes with low mood, anxiety or thoughts of harming yourself. Those point to something a screen cutoff will not fix, such as sleep apnea, chronic insomnia or a mood disorder, and all of them are treatable.</p>
+  </div>
+<div class="arrow-divider"><img src="data:image/png;base64,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" alt=""></div>
+  <div class="section">
+    <p class="section-label">THE OTHER SIDE</p>
+    <h2>Is blue light <em>overhyped</em>?</h2>
+    <p>Partly, yes. A phone screen is dim compared with a brightly lit room, and the strength of the light effect depends heavily on how bright the screen is, how close it is, and how long you stare. Some researchers argue that the light from a phone alone shifts the clock less than the headlines suggest, and that warm color modes on their own make a smaller difference than people hope.</p>
+    <p>What that argument gets right is the priority order. If the light were the whole story, night mode would fix everything. It does not, because the bigger thieves are often the time the feed eats and the arousal the content creates. A dim, warm screen showing you a stranger's rage post is still a stranger's rage post.</p>
+    <p>That is why this protocol cuts the content and moves the device instead of just tinting it orange.</p>
+    <div class="pull-quote"><p>"Tinting a rage post orange does not make it a bedtime story."</p></div>
+  </div>
+<div class="arrow-divider"><img src="data:image/png;base64,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" alt=""></div>
+  <div class="section">
+    <p class="section-label">COMMON MISTAKES</p>
+    <h2>How people <em>screw</em> this up</h2>
+    <div class="mistake"><span class="mistake-x">✗</span><div><div class="mistake-title">Trusting night mode to do the job</div><p class="mistake-desc">People turn on the warm filter and keep scrolling for an hour at full brightness. The filter reduces some blue light, but brightness, duration and the content itself are untouched.</p></div></div>
+    <div class="mistake"><span class="mistake-x">✗</span><div><div class="mistake-title">Swapping the phone for the TV</div><p class="mistake-desc">Moving the doomscroll to a bigger screen across the room changes very little. Bright light, provoking content and autoplay with no ending are the same problem in a new box.</p></div></div>
+    <div class="mistake"><span class="mistake-x">✗</span><div><div class="mistake-title">Keeping the phone on the nightstand</div><p class="mistake-desc">The plan is always to just set the alarm. Then a notification lights up at 1 a.m. and you are reading the news in the dark, which restarts both attacks in the middle of the night.</p></div></div>
+    <div class="mistake"><span class="mistake-x">✗</span><div><div class="mistake-title">Saving the hard stuff for bed</div><p class="mistake-desc">Bedtime becomes the only quiet moment to read work email, check the bank account or reply to the group chat drama. That is a guaranteed stress response timed for the exact moment you need to downshift.</p></div></div>
+    <div class="mistake"><span class="mistake-x">✗</span><div><div class="mistake-title">Skipping the morning light</div><p class="mistake-desc">People cut evening screens but stay indoors in dim light until noon. Without a strong morning signal the clock keeps drifting late, so you still feel wide awake at midnight.</p></div></div>
+    <div class="mistake"><span class="mistake-x">✗</span><div><div class="mistake-title">Quitting after three nights</div><p class="mistake-desc">A clock shifted late takes time to move back, and the reflex to grab the phone takes time to fade. Judge it on a few weeks of notes, not on how the first Tuesday went.</p></div></div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>This guide is based on published research and is not medical advice. If you have ongoing trouble sleeping, loud snoring, daytime exhaustion or low mood, see a doctor or a sleep specialist.</p>
+  <span class="footer-brand">Subscribe to Dr. Painkill.</span>
+</div>
+
+</body>
+</html>
