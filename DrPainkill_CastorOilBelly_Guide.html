@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STOP GREASING THE scar | Dr. Painkill</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style> block.  │
+  │  To build a guide: copy this file, keep the <style> verbatim, and   │
+  │  swap the content inside each component. Drop components you don't   │
+  │  need; keep arrow dividers between major sections.                   │
+  │  Every component below appears exactly once as a reference copy.     │
+  └─────────────────────────────────────────────────────────────────────┘
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Guide Title] — Dr. Painkill</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0e0e0e;
+    --surface: #161616;
+    --surface2: #1e1e1e;
+    --border: #2a2a2a;
+    --text: #e8e8e8;
+    --muted: #888;
+    --accent: #e8e2d0;
+    --red: #c0392b;
+    --green: #1e7a3a;
+    --white: #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--bg);
+    padding: 80px 24px 60px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(232,226,208,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .brand-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--muted);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 10vw, 88px);
+    line-height: 0.95;
+    color: var(--white);
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+  }
+  .hero h1 span {
+    color: var(--accent);
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+  }
+  .hero-sub {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 480px;
+    margin: 0 auto 36px;
+    font-weight: 300;
+  }
+  .study-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 8px 16px;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+  .study-badge strong { color: var(--accent); }
+
+  /* ── STATS ROW ── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid var(--border);
+  }
+  .stat {
+    padding: 28px 16px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--white);
+    line-height: 1;
+    display: block;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    margin-top: 4px;
+    text-transform: uppercase;
+  }
+
+  /* ── CONTAINER ── */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ── ARROW ── */
+  .arrow-divider {
+    text-align: center;
+    padding: 12px 0;
+  }
+  .arrow-divider img {
+    width: 52px;
+    opacity: 0.35;
+    filter: invert(1);
+  }
+
+  /* ── SECTION ── */
+  .section {
+    padding: 64px 0 48px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(34px, 6vw, 52px);
+    color: var(--white);
+    line-height: 1.0;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+  }
+  .section h2 em {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    color: var(--accent);
+  }
+  p {
+    color: #aaa;
+    margin-bottom: 16px;
+    font-size: 15.5px;
+  }
+  p strong { color: var(--text); }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    margin: 28px 0;
+    background: var(--surface);
+  }
+  .pull-quote p {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--accent);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ── CHECK LIST ── */
+  .check-list {
+    list-style: none;
+    margin: 20px 0;
+  }
+  .check-list li {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    color: #bbb;
+    align-items: flex-start;
+  }
+  .check-list li:last-child { border-bottom: none; }
+  .check-list li::before {
+    content: '✓';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ── SCIENCE TABLE ── */
+  .science-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+  }
+  .science-table th {
+    background: var(--surface2);
+    color: var(--muted);
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-bottom: 1px solid var(--border);
+  }
+  .science-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    color: #bbb;
+    vertical-align: top;
+  }
+  .science-table tr:last-child td { border-bottom: none; }
+  .science-table td:first-child { color: var(--text); font-weight: 500; }
+  .science-table td:nth-child(2) { color: var(--accent); font-weight: 600; width: 70px; }
+
+  /* ── COMPARISON GRID (bad vs good) ── */
+  .bact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 24px 0;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .bact-col {
+    background: var(--surface);
+  }
+  .bact-header {
+    padding: 12px 16px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .bact-header.bad { background: #2a0a0a; color: #e05555; }
+  .bact-header.good { background: #0a1e0a; color: #4caf50; }
+  .bact-item {
+    padding: 10px 16px;
+    border-top: 1px solid var(--border);
+    font-size: 13.5px;
+  }
+  .bact-item strong { display: block; color: var(--text); font-size: 13px; }
+  .bact-item span { color: var(--muted); font-size: 12px; }
+
+  /* ── PROTOCOL STEPS ── */
+  .steps {
+    margin: 24px 0;
+    counter-reset: steps;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    width: 40px;
+    height: 40px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .step-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 4px;
+    letter-spacing: 0.3px;
+  }
+  .step-desc {
+    font-size: 14.5px;
+    color: #999;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── MISTAKES ── */
+  .mistake {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .mistake:last-child { border-bottom: none; }
+  .mistake-x {
+    color: var(--red);
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .mistake-title {
+    font-weight: 600;
+    color: #e05555;
+    font-size: 14.5px;
+    margin-bottom: 3px;
+  }
+  .mistake-desc {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    padding: 48px 24px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  .footer p {
+    color: var(--muted);
+    font-size: 13px;
+    max-width: 480px;
+    margin: 0 auto 12px;
+    text-align: center;
+  }
+  .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--white);
+    display: block;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .stat { border-bottom: 1px solid var(--border); }
+    .bact-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <span class="brand-label">Dr. Painkill</span>
+  <h1>STOP GREASING THE<br/><span>scar</span></h1>
+  <p class="hero-sub">The oil was never doing the work. Your hands were. Here is how to use them properly, and when to stop and see a doctor.</p>
+  <div class="study-badge">
+    <strong>PEER REVIEWED</strong> &nbsp;PNAS, 2012 and Physical Therapy, 2022
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat"><span class="stat-num">74</span><span class="stat-label">PEOPLE IN THE MASSAGE TRIAL</span></div>
+  <div class="stat"><span class="stat-num">70%</span><span class="stat-label">CUT IN CONSTIPATION SEVERITY</span></div>
+  <div class="stat"><span class="stat-num">4</span><span class="stat-label">WEEKS OF MASSAGE TESTED</span></div>
+  <div class="stat"><span class="stat-num">0</span><span class="stat-label">OPEN CHANNELS BEHIND YOUR NAVEL</span></div>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <p class="section-label">The Problem</p>
+    <h2>What the trend <em>actually</em> promises</h2>
+    <p>Navel oiling (also sold as navel pulling) claims that a few drops of oil in your belly button will detox your liver, flatten bloating, ease cramps, boost fertility, melt weight and even dissolve kidney stones. That is a lot of jobs for one dimple. Every one of them depends on the oil getting from your navel to the organ in question.</p>
+    <p>The whole theory rests on a structure called the Pechoti gland, supposedly sitting behind the navel and wired to the rest of your body. There is no scientific evidence that this gland exists. Remove the gland and the delivery route goes with it, along with every claim built on top of it.</p>
+    <p>Nebraska Medicine's gastroenterology team put it plainly. There is currently no scientific evidence that castor oil in the navel helps digestion or any other health concern. The belly button has no direct connection to your digestive or lymphatic system.</p>
+    <div class="pull-quote"><p>"A whole wellness industry built on a gland nobody has ever found."</p></div>
+    <ul class="check-list">
+      <li>No scientific evidence the Pechoti gland exists</li>
+      <li>No evidence that castor oil in the navel helps digestion or any other health concern</li>
+      <li>The navel has no direct connection to the gut or the lymphatic system</li>
+      <li>Castor oil only acts on the gut when it is swallowed (Tunaru et al., PNAS 2012)</li>
+      <li>The relief people report matches what abdominal massage does for constipation (Doğan et al., Physical Therapy 2022)</li>
+    </ul>
+  </div>
+<div class="arrow-divider"><img src="data:image/png;base64,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" alt=""></div>
+  <div class="section">
+    <p class="section-label">The Science</p>
+    <h2>Three facts that <em>kill</em> the ritual</h2>
+    <p>Start with the anatomy. Your belly button is the scar where your umbilical cord was attached. Before birth, that cord was live plumbing. After birth, every pipe in it sealed off and turned into solid fibrous cords inside your belly wall. The umbilical vein became a ligament running up to the liver. The umbilical arteries, plus the old bladder stalk (the urachus), became ligaments running down toward the bladder. They are closed cords, not tubes. Picture a bricked up doorway: the outline is still there, but nothing walks through it. Nothing travels down those ligaments to your gut, your liver's blood supply or your lymph.</p>
+    <p>Now the oil. Tunaru and colleagues (PNAS, 2012) worked out how castor oil really does what it does. It has to be swallowed. In the gut, digestive enzymes called lipases cut ricinoleic acid out of the oil. Ricinoleic acid then switches on EP3 receptors, which are prostaglandin receptors sitting in the smooth muscle of the intestine and the uterus. Activate them in the intestine and the gut wall contracts, which makes castor oil a laxative. Activate them in the uterus and you get contractions, which is why castor oil has a history of being used to bring on labour.</p>
+    <p>The proof of that chain is clean. In mice bred without EP3 receptors, castor oil did nothing. No receptor, no effect. So the active ingredient is not the oil itself but a fragment that only gut enzymes can release, acting on a receptor in gut muscle. Dab the oil on a scar and it never meets those enzymes, so the chain never starts. On skin, castor oil is a perfectly fine moisturizer, and that is all it is.</p>
+    <p>That leaves the part of the ritual that does move things: rubbing your belly. Doğan and colleagues (Physical Therapy, 2022) ran a randomized placebo controlled trial in 74 people with chronic functional constipation. Four weeks of abdominal massage cut constipation severity by about 70%, against 28% with a placebo treatment. Bowel movements rose by about 70%, against 43% with placebo.</p>
+    <p>The trial measured results, not the exact physiology behind them, so any claim about how massage moves stool is a hypothesis, not a finding. What is solid is the technique's logic: the massage follows the route your colon runs, up the right side, across under the ribs and down the left side, the same direction stool travels. One chain, told straight: sealed scar, oil that needs gut enzymes, and hands that are the only working part.</p>
+    <div class="pull-quote"><p>"Castor oil is a key that only turns in your gut. Your navel is not the lock."</p></div>
+    <table class="science-table"><thead><tr><th>Item</th><th>Value</th><th>Mechanism</th></tr></thead><tbody>
+      <tr><td>Belly button</td><td>Scar</td><td>Where the umbilical cord attached. Sealed after birth, no open channel inward</td></tr>
+      <tr><td>Old umbilical vein</td><td>Ligament</td><td>Now a solid cord running to the liver. Carries nothing</td></tr>
+      <tr><td>Old arteries and urachus</td><td>Ligaments</td><td>Solid cords running down toward the bladder. Carry nothing</td></tr>
+      <tr><td>Ricinoleic acid</td><td>Gut only</td><td>Cut out of castor oil by gut lipases, switches on EP3 receptors in intestinal and uterine muscle</td></tr>
+      <tr><td>Mice without EP3</td><td>No effect</td><td>Castor oil did nothing, proving the receptor is the whole mechanism</td></tr>
+      <tr><td>Abdominal massage</td><td>~70% vs 28%</td><td>Cut constipation severity over 4 weeks against placebo in chronic functional constipation</td></tr>
+    </tbody></table>
+  </div>
+<div class="arrow-divider"><img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAGoBH8DASIAAhEBAxEB/8QAHQABAAEEAwEAAAAAAAAAAAAAAAcEBQYIAQIDCf/EADoQAQABAwMCBAUCBAQFBQAAAAABAgMEBQYRByESMUFRCBMiYXGBkRQyQrEWUqHBIzND4fFygpLC8P/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A3LAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAW3cWu6Nt3TqtQ13VMPTcSJ4+bk3qbdMz/ljme9U+kR3n0XJhXW3Z9rfPTbVdBqpp+fXa+bi1TMR4btH1Uzz6RzHE/aQZfj37WRYt5GPdt3rF2iK7dyiqKqa6ZjmJiY84mPV7Qh34TNx5GsdLrWjajF6nUtBu1YV751VVVVVHM1W6uZjtERM0RTzPHy/biEwwDkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEN9POmuubR66bm3FiXsanbWsWprptU1/XF6Zpq48PHlE+PvE/9pkhbde1vSdAw4zda1HF0/GquU24u5F2KKfFPlHM+q4Wq6Ltum5bqiuiqOaaonmJgHYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdZuUR510x+rtExPlIAAAAAAIT+NHB/i+iGXkxHFeDmWL9NUedP1eD9vq/skfpdn16n0527n3J8VeRpmPcqq555qm3HP+qyfELoWo7l6Pbg0bScWvKzr1imbNqnzrmmumriP0ie3+/Ct6K6bqWj9K9uaXrGNVi5+Ng27d61VMTNFUR5Tx68cAzMI8gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB5ZeRZxcevIyLlFq1bpmquuurimmmPOZn0h56nm2NO0/Iz8qvwWMe3VduVe1NMczLWDM/xx8RO5buPj3K9C6eYmRxVciZivL4mfLjmKqvt5U/kE8bK6j7Q3rq2o6ZtrVqc+/p0UzfmiirwTFU8RNNXHFXeOO3+/L16pbd1jdG1bmk6HuLJ0DMuVxMZVmJ708TE0zxMT6xPaeeYenTvY+29iaNGmbc0yziW5iJu3Ip5uXqojjxV1edU/wBvRk8g1un4YsrKr+ZqnU/cGXdnjxVxTMRP71z7R+36RnXRrpJkdPNYy82vemsazYv4/wAmnEyZ4t0zzEzXP1TzV249POfPlK3BwCxb81vM27tLUNa0/R8nWMnFt+OjCx/57veI4jtPlzz5T2ifNgfS/r5svel+nTci7XoWsfy1YedPg8VXtTXPETP2nifslnhHHVfo3s3qHj1XNRwqcPVIjm3qGNEU3Ynt/N/mjt5SCSBF3QrbG/8AaOLnaJuvW7Gs6ZZqiNNvzVVN2KeZ+mfF34495n7JRAABxPYQ38YuuZWh9G79WHfrtXsvMs40TTPEzEzNUx+1Mx+qSdiWsmzsvRLeZcruZFOBZi7VXPNU1eCOeefXkF8CPIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABG/xIb0nY/SrU9Tx7ngzsmn+Ew5iqYmLlfbxRx7U+KfzEAkPxWsi3VEeC5RPNNXlMT7w6YWLjYWPTjYePax7NH8tu1RFNMfiI7Qjn4ZtrZe1Okel42oXb1zMzYnOvRcrmrwTc7xTHPlxHHP35SaDkAAAAAHHCIOsXVLWum++NDr1HRqL2zc6n5ORm0UzN21e7+XE+URxPEx3jnjyTAsu99taVu7bWZoGs49N/EyqJpnmOZonieKqfaqPOJBcNNzsXUcGznYN+3kYt+iLlq7bnmmumfKYlVNcvhy1Dcmwt+5/RzctN+/i2oryNGy5onw1W4mZnvP9NXeY9piYbGg14+LvGzdf1vp/tDHx7tePqGreO/cpomaYiPDT3n7RVVP/hsLaoi3bpopjiKY4iPZxXboq48VNNXHlzHk7gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIF+Jva2vb03psHQ8PS8nK0WM+q7qF61TM0W4iaInxz6fT4+J7ecwnoB0ppimmKaY4iI4h3jyAAAAAAAAkAefyrfzYuzRT46YmIq47xE+f9oY11U3Vj7L2Dq25L8xziWJmzRM9q7s9qKf1qmGUtJeo+yt05fXm707y9w5FWia7qtOocXr0zzTPinxfV5zETVT27cxH6BsN8Mdzc+Z0txdX3VqeTn5mp368u1N6rmbdqqfpiPtPEzEenPslSFNp+JYwMDHwcW3Fuxj2qbVuiPKmmmOIj9oVIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAvio13Vdpbj2HufGycijAx9Qqt5VNF+aKauZpniqI7TzTFXnHun1gnXjZkb76Y6toNuiKsubXz8Pn0v0d6Y/XvT/wC4Gb2L1F6zbvW55prpiqPxL0RZ8MOv6vrnSbAta5hZWNn6XVOn3Jv0eGbkW4iKao9/pmmJ+8SlKAcgAAAAAAtO7dxaTtbb+Xrut5VGLg4tHiuV1T3n2iPeZ9IBX38vHsXbdq9ftW7l2eLdNdcRNc+0R6yhL4tNp6xm6LpG8tr4V3J1vRcqjmLFHiufKmqJ8VMcd5prpp/SZnyhivTDC1rrZ1Up6na1Zv4O2tHvcaNizE0zcqpntP344iap9Z4iPJs8Cg0PJycvRsLLzMevGv3sei5ds1+duqaeZpn8Sr4OCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAedddNETXXVFNMRzNVU8RH5lR6HrOk65hfxujaliahjeKafm412LlPijzjmFXk2beRYrsXqIrt3KZprpnyqiY4mJaybm2VvPoduW/u/ptRkarte/V48/R6qprminjvxHeZiO8xVEcx68wK2gEf9I+q+1upOBVXo965Yz7VEVZOBfji7a9J+1Uc+sfby54SBEiAAA6XrlFq3VcuV00UUxzVVVPERHvMob6l/EJtXbd6dJ25bu7o1yuv5dGPhR4rdFXPHFVcf2pif0BM6MOs/SmrqVquh0524cjE0TBuTcy9Pot8xkzzExPi5jifOO8Tx6eaj6HYHVPI1TUNz7/ANSizjZ9vjG0iaYicb6uYqmImYpnjmPOZn14lLcwCh0jTcLSNNsabpuNaxcPHoi3Zs26eKaKY9FbBw58ga75Oo5+0PjIpsZedkTpm6sGmmzRcuTNFFdNMxERHPb67c8f+tsPDX34wtC1KLW0t56Nh3srL0bU6Irt2aJqqmmqYqpniIn+qnj2+pP2Nc+bYt3Zpmma6Iq4nzjmAeoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALFo+0ds6Pr2Zrul6JhYeo5tPhyL9m3FNVcc8+nvPeffiOXh1Hy904O0czK2Zp2NqOt2/DOPj5Ffhor7xzz3jnt6cwyQkGuWP1Z65YmRRj6n0euXa/FFNVyxFyKJ+/MeKOGX9Jt9dTty7ouY26OntWg6PFmqqnKrqqpqiuJjiOKv5ue/pH59EvALZubRsTcO387RM+bsYudYqsXptV+Cvw1RxPE+jFunXSfZWw7cVaFpVE5cxxVmZH/ABL8+/1T5R9o4Z4SAAAADjg4+61bxvX8bamr5OLcm3fs4N65aqjzpqiiZif3Rx8Ju5NT3R0mt5+rZ+TnZNvNvWfnZFfjrmmOJiPF6+f+3oCXQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHqJkfwuxNdyZ54tadfr7efa3V5fdFXwR2KrPROi5McRf1G/cp9uPpp/8Aqm7KsWsmxXYv26Ltq5TNNdFcc01RPnEx6w8NJ03A0nAt4GmYdjDxbXMW7NiiKKKeZ5niI7eczP6grAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARp8RO+tR2PsSL+iYORlavqN6MLC+XbmqLdyqJnxz6cxx2j1n9QY7ndR9w658RWFsbaN2zVpGm26q9bu/LiqJmI708zHaaeaY7T5zPsmxE/w29Na9h7UrzNYp+ZuPVqoydQuTV4ppmeZijn145mZn1mZSzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIl67dY8LYVNvRNIxo1jdWZEU42DbqmZt+LtFVfEc/inzkGc69vXbOha1p2i6tq2Pi6hqVcUYmPXM+K5VMxEeUdomZ45njuv1dMVceKmJ4nmOY8pQP0P6QanGux1I6mZF3Udz5E/Nx8e9V46cP2+3ij0iO1PonvzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAfW/qlqmo7jjpb02prytfyom3mZlmPFGJHHenn0n3q7xT+fIJvwdU07ULuRawM/GyrmLc+XkU2rkVTar/y1RHlP2la69m7XubujdtzRcSvXKaPlxmVUc1xTxx29Inj18/uxzoX0xweme2a8O3kV5mpZkxc1DJqqni5c79qY9KY57f/ALiQwcgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAs+9Nw4G1dsZ+4NTr8OLhWKrtfExE1ceVMc+szxEfkF0ybfzbNdqappiumaZmnzjn2YH0o6Uba6cxn3dJ/iMrNzrk1XsvKqiu7NMzz4OYiO391D8Om7t1742Zf3HufExsajJyq/4CmzbmjmzHbmeZnnvExz68JOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa7/E7mZ+8d67a6RaTcmIz79GRqNUf02o5nv6doiZ+8zDYhQzpWmzq8avOBizqEWvkxlfKj5sW+efD4/PjnvwDnQtMw9G0fE0rAs02cXEs02bVFMdqaaY4j+ytAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGBdft4ZGxulura/hXKLebRRTaxZqjmPmV1REdvXjvP6Ln0nztY1TpvoGqa9epvall4Nu9frppimKpqjmJ4jtHaY8uEQfG9lV39t7X25b8XzNS1aJ4pn0pp8Pl+bkfs2A03Gt4WnY2HZoii3YtU26aY8oiI4iP9AVIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALJuPa239xZem5et6Vj517TL/AM/DruxzNmvt3j9o7T7R7LyjLqj1MyNmdQtnbdo0u1lY+4MmbF+9NyYrtR4qKYmmI+9XM8+kdkngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACj1nU8HR9Ou6jqeVaxcSzETdvXavDTREzERzP5mHlo+uaNrFmL+k6phZ1qf68e/Tcj94kEDfGNbs4GpbA3Ndm5FOn6vxM0xE8c1W6ojvx/kn1/7bD27kV0U10+VVMVR+JYn1V2BovUbblrRNbuZNqzayaMm3cx6oprpqpiY7TMT2mJmP/C8arqmkbY0KrN1bPtYWBh2oiu9fr4iIiOI7+sz7Au01cd58vWWJaD1C2/r+9s3auiXpz7+n2fmZt+1/yrNXi4pt+LyqqnvPby8M/hql13+JPUdyVZGg7PpuYOi1827+RV9N/Jj7THeimfbzn1454Sp8DW3reB0+1HcXy7tNerZfho+ZPMzbt8xE8+v1TX+wNhwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeOdjWM3EvYmVaovY9+3Vbu2645iumqOJiftMcw0C+IXpvq3Snek5WiZGZa0XNuTcwMm3XVTNqfObUzH9Uek+33fQNjfUnZ2kb62ll7d1mzTXYvxzRXxzVZuRE+Gun7xz/ePUGg+2uuHVDQfDTibszb9un/p5cxfjj2+vmY/dbuqHVPeHUTItV7g1GfkWoiKMSxzRYieP5vBzxNU+sz/pC19Rto6tsXd2bt3WLM03se5MUXePovUeldPvE+f2Y6K6001V1RTTHMzPER68vp10j29TtXptoOgxbiivFwrfzoif+rVHirn/AOUy+f8A0F29/ijq9t3SqqPHanLpv3omOY8Fv66on8xTMfq+lUUxEcQI5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEvxJ9JsfqTtaL2Dbop1/T6aqsK5MxHzOeObdU+08Rx7T+ZfPrMx8jDzL2JlWa7N+zXNFy3XHFVNUdpiY931far/ABjdHqsyzc6hbbxecizRzq1i3T2rop5n50R7xH832iJ9AY78BO3f4rdmt7lu2/owsanHs1TH9Vyeapj8RT/q3KhC/wAG23Z0Lovh5V2iacjVb9eZXzzz4Z+mn94p5/VNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADpdtUXbdVu5TTXRXTNNVNUcxMS7gKfTsPG0/Cs4WHZt2MexRFFq3RTxTTTHlEQqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//2Q==" alt=""></div>
+  <div class="section">
+    <p class="section-label">The Split</p>
+    <h2>Ritual versus <em>reality</em></h2>
+    <p>Strip the ritual into its parts and sort them by what the evidence supports. The mystical parts fall on one side. The boring physical part, your hands on your belly, lands on the other.</p>
+    <div class="bact-grid">
+      <div class="bact-col">
+        <div class="bact-header bad">✗ The Ritual Claims</div>
+        <div class="bact-item"><strong>Pechoti gland</strong><span>No scientific evidence it exists</span></div>
+        <div class="bact-item"><strong>Navel absorption</strong><span>The navel is a sealed scar with no channel to the gut, liver or lymph</span></div>
+        <div class="bact-item"><strong>Liver detox</strong><span>The old umbilical vein is now a closed ligament, not a pipe</span></div>
+        <div class="bact-item"><strong>Fertility, weight loss, kidney stones</strong><span>No evidence for any of them</span></div>
+      </div>
+      <div class="bact-col">
+        <div class="bact-header good">✓ What Is Real</div>
+        <div class="bact-item"><strong>Abdominal massage</strong><span>Cut constipation severity about 70% vs 28% placebo in a 4 week trial</span></div>
+        <div class="bact-item"><strong>Castor oil on skin</strong><span>A fine moisturizer, nothing more</span></div>
+        <div class="bact-item"><strong>Castor oil swallowed</strong><span>A real laxative via ricinoleic acid and EP3, which is exactly why you should not drink it to detox</span></div>
+      </div>
+    </div>
+  </div>
+<div class="arrow-divider"><img src="data:image/png;base64,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" alt=""></div>
+  <div class="section">
+    <p class="section-label">Red Flags</p>
+    <h2>When it is a <em>doctor</em>, not a bottle</h2>
+    <p>Bloating has two common everyday causes: gas and slow transit, which means constipation. Most of the time it is one of those. But some bloating is a symptom of something that needs to be looked at, and no oil or massage should stand between you and that appointment.</p>
+    <p>The NHS line is simple: if you keep getting bloated for more than 3 weeks, see a GP. Do not wait on oil if your bloating comes with weight loss you cannot explain, blood in your poo, or a change in your bowel habits. Those signs need an actual examination.</p>
+    <p>One more hard line. Do not drink castor oil to detox. Swallowed, it is a strong laxative, and in pregnancy it can set off contractions.</p>
+    <div class="pull-quote"><p>"Blood in the bowl is a phone call, not a ritual."</p></div>
+    <ul class="check-list">
+      <li>Bloated on and off for more than 3 weeks</li>
+      <li>Weight loss alongside bloating</li>
+      <li>Blood in your poo</li>
+      <li>A change in your usual bowel habits</li>
+    </ul>
+  </div>
+<div class="arrow-divider"><img src="data:image/png;base64,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" alt=""></div>
+  <div class="section">
+    <p class="section-label">The Protocol</p>
+    <h2>Keep the massage, <em>ditch</em> the magic</h2>
+    <p>This is the part of the ritual with a trial behind it, rebuilt without the mythology. It was tested in chronic functional constipation, so that is what it is for. The route follows your colon, and the timeframe follows the trial. There is no magic minute count here, because the research does not give one, and we will not make one up.</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div><div class="step-title">Run the red flag check first</div><p class="step-desc">Before you start, go through the list above: bloated for more than 3 weeks, weight loss, blood in your poo, a change in bowel habits. If any of those apply, book the GP first. Massage was tested for constipation, not for covering up a symptom that needs to be examined.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div><div class="step-title">Lie flat and stay still</div><p class="step-desc">Lie on your back somewhere you will not be interrupted. Lying still is part of what people feel during the navel ritual, so keep it. It also gives your hands a relaxed belly to work on instead of a braced one.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div><div class="step-title">Use oil for glide, or skip it</div><p class="step-desc">Any skin oil works purely as lubricant so your hands slide instead of drag. Castor oil is fine here as a moisturizer, but on skin it never meets the gut enzymes that make it active, so it adds nothing beyond glide. If it irritates your skin, stop using it.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div><div class="step-title">Start low on the right and push up</div><p class="step-desc">Place the flat of your hand low on the right side of your belly and move upward toward your ribs with firm pressure. This traces the first stretch of the colon, which runs up your right side. Firm means you can feel it working, not that it hurts.</p></div></div>
+      <div class="step"><div class="step-num">5</div><div><div class="step-title">Sweep across under the ribs</div><p class="step-desc">At the top of the right side, move across your upper belly just under the ribs, from right to left. This follows the section of colon that crosses your abdomen. Keep the pressure steady and the direction strictly right to left.</p></div></div>
+      <div class="step"><div class="step-num">6</div><div><div class="step-title">Come down the left side</div><p class="step-desc">From under the left ribs, move straight down the left side of your belly. That completes the route stool actually travels before it exits. Then return to the lower right and repeat the same loop in the same direction.</p></div></div>
+      <div class="step"><div class="step-num">7</div><div><div class="step-title">Keep it up for 4 weeks</div><p class="step-desc">The trial ran abdominal massage for 4 weeks, and that is the timeframe the 70% result comes from. Build it into a routine you will actually repeat. Judging it after two sessions means judging something nobody tested.</p></div></div>
+      <div class="step"><div class="step-num">8</div><div><div class="step-title">Keep the castor oil out of your mouth</div><p class="step-desc">The swallowed version is a different thing entirely: a strong laxative acting through EP3 receptors in your gut and uterus. Do not drink it to detox, and in pregnancy it can set off contractions. The protocol works on the outside of your belly, and that is where the oil stays.</p></div></div>
+    </div>
+  </div>
+<div class="arrow-divider"><img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAGoBH8DASIAAhEBAxEB/8QAHQABAAEEAwEAAAAAAAAAAAAAAAcEBQYIAQIDCf/EADoQAQABAwMCBAUCBAQFBQAAAAABAgMEBQYRByESMUFRCBMiYXGBkRQyQrEWUqHBIzND4fFygpLC8P/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A3LAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAW3cWu6Nt3TqtQ13VMPTcSJ4+bk3qbdMz/ljme9U+kR3n0XJhXW3Z9rfPTbVdBqpp+fXa+bi1TMR4btH1Uzz6RzHE/aQZfj37WRYt5GPdt3rF2iK7dyiqKqa6ZjmJiY84mPV7Qh34TNx5GsdLrWjajF6nUtBu1YV751VVVVVHM1W6uZjtERM0RTzPHy/biEwwDkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEN9POmuubR66bm3FiXsanbWsWprptU1/XF6Zpq48PHlE+PvE/9pkhbde1vSdAw4zda1HF0/GquU24u5F2KKfFPlHM+q4Wq6Ltum5bqiuiqOaaonmJgHYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdZuUR510x+rtExPlIAAAAAAIT+NHB/i+iGXkxHFeDmWL9NUedP1eD9vq/skfpdn16n0527n3J8VeRpmPcqq555qm3HP+qyfELoWo7l6Pbg0bScWvKzr1imbNqnzrmmumriP0ie3+/Ct6K6bqWj9K9uaXrGNVi5+Ng27d61VMTNFUR5Tx68cAzMI8gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB5ZeRZxcevIyLlFq1bpmquuurimmmPOZn0h56nm2NO0/Iz8qvwWMe3VduVe1NMczLWDM/xx8RO5buPj3K9C6eYmRxVciZivL4mfLjmKqvt5U/kE8bK6j7Q3rq2o6ZtrVqc+/p0UzfmiirwTFU8RNNXHFXeOO3+/L16pbd1jdG1bmk6HuLJ0DMuVxMZVmJ708TE0zxMT6xPaeeYenTvY+29iaNGmbc0yziW5iJu3Ip5uXqojjxV1edU/wBvRk8g1un4YsrKr+ZqnU/cGXdnjxVxTMRP71z7R+36RnXRrpJkdPNYy82vemsazYv4/wAmnEyZ4t0zzEzXP1TzV249POfPlK3BwCxb81vM27tLUNa0/R8nWMnFt+OjCx/57veI4jtPlzz5T2ifNgfS/r5svel+nTci7XoWsfy1YedPg8VXtTXPETP2nifslnhHHVfo3s3qHj1XNRwqcPVIjm3qGNEU3Ynt/N/mjt5SCSBF3QrbG/8AaOLnaJuvW7Gs6ZZqiNNvzVVN2KeZ+mfF34495n7JRAABxPYQ38YuuZWh9G79WHfrtXsvMs40TTPEzEzNUx+1Mx+qSdiWsmzsvRLeZcruZFOBZi7VXPNU1eCOeefXkF8CPIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABG/xIb0nY/SrU9Tx7ngzsmn+Ew5iqYmLlfbxRx7U+KfzEAkPxWsi3VEeC5RPNNXlMT7w6YWLjYWPTjYePax7NH8tu1RFNMfiI7Qjn4ZtrZe1Okel42oXb1zMzYnOvRcrmrwTc7xTHPlxHHP35SaDkAAAAAHHCIOsXVLWum++NDr1HRqL2zc6n5ORm0UzN21e7+XE+URxPEx3jnjyTAsu99taVu7bWZoGs49N/EyqJpnmOZonieKqfaqPOJBcNNzsXUcGznYN+3kYt+iLlq7bnmmumfKYlVNcvhy1Dcmwt+5/RzctN+/i2oryNGy5onw1W4mZnvP9NXeY9piYbGg14+LvGzdf1vp/tDHx7tePqGreO/cpomaYiPDT3n7RVVP/hsLaoi3bpopjiKY4iPZxXboq48VNNXHlzHk7gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIF+Jva2vb03psHQ8PS8nK0WM+q7qF61TM0W4iaInxz6fT4+J7ecwnoB0ppimmKaY4iI4h3jyAAAAAAAAkAefyrfzYuzRT46YmIq47xE+f9oY11U3Vj7L2Dq25L8xziWJmzRM9q7s9qKf1qmGUtJeo+yt05fXm707y9w5FWia7qtOocXr0zzTPinxfV5zETVT27cxH6BsN8Mdzc+Z0txdX3VqeTn5mp368u1N6rmbdqqfpiPtPEzEenPslSFNp+JYwMDHwcW3Fuxj2qbVuiPKmmmOIj9oVIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAvio13Vdpbj2HufGycijAx9Qqt5VNF+aKauZpniqI7TzTFXnHun1gnXjZkb76Y6toNuiKsubXz8Pn0v0d6Y/XvT/wC4Gb2L1F6zbvW55prpiqPxL0RZ8MOv6vrnSbAta5hZWNn6XVOn3Jv0eGbkW4iKao9/pmmJ+8SlKAcgAAAAAAtO7dxaTtbb+Xrut5VGLg4tHiuV1T3n2iPeZ9IBX38vHsXbdq9ftW7l2eLdNdcRNc+0R6yhL4tNp6xm6LpG8tr4V3J1vRcqjmLFHiufKmqJ8VMcd5prpp/SZnyhivTDC1rrZ1Up6na1Zv4O2tHvcaNizE0zcqpntP344iap9Z4iPJs8Cg0PJycvRsLLzMevGv3sei5ds1+duqaeZpn8Sr4OCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAedddNETXXVFNMRzNVU8RH5lR6HrOk65hfxujaliahjeKafm412LlPijzjmFXk2beRYrsXqIrt3KZprpnyqiY4mJaybm2VvPoduW/u/ptRkarte/V48/R6qprminjvxHeZiO8xVEcx68wK2gEf9I+q+1upOBVXo965Yz7VEVZOBfji7a9J+1Uc+sfby54SBEiAAA6XrlFq3VcuV00UUxzVVVPERHvMob6l/EJtXbd6dJ25bu7o1yuv5dGPhR4rdFXPHFVcf2pif0BM6MOs/SmrqVquh0524cjE0TBuTcy9Pot8xkzzExPi5jifOO8Tx6eaj6HYHVPI1TUNz7/ANSizjZ9vjG0iaYicb6uYqmImYpnjmPOZn14lLcwCh0jTcLSNNsabpuNaxcPHoi3Zs26eKaKY9FbBw58ga75Oo5+0PjIpsZedkTpm6sGmmzRcuTNFFdNMxERHPb67c8f+tsPDX34wtC1KLW0t56Nh3srL0bU6Irt2aJqqmmqYqpniIn+qnj2+pP2Nc+bYt3Zpmma6Iq4nzjmAeoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALFo+0ds6Pr2Zrul6JhYeo5tPhyL9m3FNVcc8+nvPeffiOXh1Hy904O0czK2Zp2NqOt2/DOPj5Ffhor7xzz3jnt6cwyQkGuWP1Z65YmRRj6n0euXa/FFNVyxFyKJ+/MeKOGX9Jt9dTty7ouY26OntWg6PFmqqnKrqqpqiuJjiOKv5ue/pH59EvALZubRsTcO387RM+bsYudYqsXptV+Cvw1RxPE+jFunXSfZWw7cVaFpVE5cxxVmZH/ABL8+/1T5R9o4Z4SAAAADjg4+61bxvX8bamr5OLcm3fs4N65aqjzpqiiZif3Rx8Ju5NT3R0mt5+rZ+TnZNvNvWfnZFfjrmmOJiPF6+f+3oCXQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHqJkfwuxNdyZ54tadfr7efa3V5fdFXwR2KrPROi5McRf1G/cp9uPpp/8Aqm7KsWsmxXYv26Ltq5TNNdFcc01RPnEx6w8NJ03A0nAt4GmYdjDxbXMW7NiiKKKeZ5niI7eczP6grAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARp8RO+tR2PsSL+iYORlavqN6MLC+XbmqLdyqJnxz6cxx2j1n9QY7ndR9w658RWFsbaN2zVpGm26q9bu/LiqJmI708zHaaeaY7T5zPsmxE/w29Na9h7UrzNYp+ZuPVqoydQuTV4ppmeZijn145mZn1mZSzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIl67dY8LYVNvRNIxo1jdWZEU42DbqmZt+LtFVfEc/inzkGc69vXbOha1p2i6tq2Pi6hqVcUYmPXM+K5VMxEeUdomZ45njuv1dMVceKmJ4nmOY8pQP0P6QanGux1I6mZF3Udz5E/Nx8e9V46cP2+3ij0iO1PonvzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAfW/qlqmo7jjpb02prytfyom3mZlmPFGJHHenn0n3q7xT+fIJvwdU07ULuRawM/GyrmLc+XkU2rkVTar/y1RHlP2la69m7XubujdtzRcSvXKaPlxmVUc1xTxx29Inj18/uxzoX0xweme2a8O3kV5mpZkxc1DJqqni5c79qY9KY57f/ALiQwcgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAs+9Nw4G1dsZ+4NTr8OLhWKrtfExE1ceVMc+szxEfkF0ybfzbNdqappiumaZmnzjn2YH0o6Uba6cxn3dJ/iMrNzrk1XsvKqiu7NMzz4OYiO391D8Om7t1742Zf3HufExsajJyq/4CmzbmjmzHbmeZnnvExz68JOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa7/E7mZ+8d67a6RaTcmIz79GRqNUf02o5nv6doiZ+8zDYhQzpWmzq8avOBizqEWvkxlfKj5sW+efD4/PjnvwDnQtMw9G0fE0rAs02cXEs02bVFMdqaaY4j+ytAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGBdft4ZGxulura/hXKLebRRTaxZqjmPmV1REdvXjvP6Ln0nztY1TpvoGqa9epvall4Nu9frppimKpqjmJ4jtHaY8uEQfG9lV39t7X25b8XzNS1aJ4pn0pp8Pl+bkfs2A03Gt4WnY2HZoii3YtU26aY8oiI4iP9AVIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALJuPa239xZem5et6Vj517TL/AM/DruxzNmvt3j9o7T7R7LyjLqj1MyNmdQtnbdo0u1lY+4MmbF+9NyYrtR4qKYmmI+9XM8+kdkngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACj1nU8HR9Ou6jqeVaxcSzETdvXavDTREzERzP5mHlo+uaNrFmL+k6phZ1qf68e/Tcj94kEDfGNbs4GpbA3Ndm5FOn6vxM0xE8c1W6ojvx/kn1/7bD27kV0U10+VVMVR+JYn1V2BovUbblrRNbuZNqzayaMm3cx6oprpqpiY7TMT2mJmP/C8arqmkbY0KrN1bPtYWBh2oiu9fr4iIiOI7+sz7Au01cd58vWWJaD1C2/r+9s3auiXpz7+n2fmZt+1/yrNXi4pt+LyqqnvPby8M/hql13+JPUdyVZGg7PpuYOi1827+RV9N/Jj7THeimfbzn1454Sp8DW3reB0+1HcXy7tNerZfho+ZPMzbt8xE8+v1TX+wNhwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeOdjWM3EvYmVaovY9+3Vbu2645iumqOJiftMcw0C+IXpvq3Snek5WiZGZa0XNuTcwMm3XVTNqfObUzH9Uek+33fQNjfUnZ2kb62ll7d1mzTXYvxzRXxzVZuRE+Gun7xz/ePUGg+2uuHVDQfDTibszb9un/p5cxfjj2+vmY/dbuqHVPeHUTItV7g1GfkWoiKMSxzRYieP5vBzxNU+sz/pC19Rto6tsXd2bt3WLM03se5MUXePovUeldPvE+f2Y6K6001V1RTTHMzPER68vp10j29TtXptoOgxbiivFwrfzoif+rVHirn/AOUy+f8A0F29/ijq9t3SqqPHanLpv3omOY8Fv66on8xTMfq+lUUxEcQI5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEvxJ9JsfqTtaL2Dbop1/T6aqsK5MxHzOeObdU+08Rx7T+ZfPrMx8jDzL2JlWa7N+zXNFy3XHFVNUdpiY931far/ABjdHqsyzc6hbbxecizRzq1i3T2rop5n50R7xH832iJ9AY78BO3f4rdmt7lu2/owsanHs1TH9Vyeapj8RT/q3KhC/wAG23Z0Lovh5V2iacjVb9eZXzzz4Z+mn94p5/VNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADpdtUXbdVu5TTXRXTNNVNUcxMS7gKfTsPG0/Cs4WHZt2MexRFFq3RTxTTTHlEQqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//2Q==" alt=""></div>
+  <div class="section">
+    <p class="section-label">Is It Working</p>
+    <h2>What to <em>track</em> instead of vibes</h2>
+    <p>Track the two things the trial measured. First, how often you go: count your bowel movements across a week before you start, then keep counting. Second, how bad the constipation feels: straining, hard stool, the sense that you never fully empty. In the trial, frequency rose about 70% and severity fell about 70%, so those are the dials that should move.</p>
+    <p>Be honest about what kind of bloat you have. If your bloating comes from slow transit, the massage is aimed squarely at it. If it is mostly gas and your bowels already move fine, the trial never tested that, so a lack of change is not you doing it wrong.</p>
+    <p>Stop and see a doctor if the massage is painful, or if any red flag turns up while you are doing it: blood, weight loss, a change in habits, or bloating that keeps returning past 3 weeks. Improvement is the goal. Masking a symptom is not.</p>
+    <div class="pull-quote"><p>"Count your trips to the toilet, not your drops of oil."</p></div>
+  </div>
+<div class="arrow-divider"><img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAGoBH8DASIAAhEBAxEB/8QAHQABAAEEAwEAAAAAAAAAAAAAAAcEBQYIAQIDCf/EADoQAQABAwMCBAUCBAQFBQAAAAABAgMEBQYRByESMUFRCBMiYXGBkRQyQrEWUqHBIzND4fFygpLC8P/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A3LAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAW3cWu6Nt3TqtQ13VMPTcSJ4+bk3qbdMz/ljme9U+kR3n0XJhXW3Z9rfPTbVdBqpp+fXa+bi1TMR4btH1Uzz6RzHE/aQZfj37WRYt5GPdt3rF2iK7dyiqKqa6ZjmJiY84mPV7Qh34TNx5GsdLrWjajF6nUtBu1YV751VVVVVHM1W6uZjtERM0RTzPHy/biEwwDkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEN9POmuubR66bm3FiXsanbWsWprptU1/XF6Zpq48PHlE+PvE/9pkhbde1vSdAw4zda1HF0/GquU24u5F2KKfFPlHM+q4Wq6Ltum5bqiuiqOaaonmJgHYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdZuUR510x+rtExPlIAAAAAAIT+NHB/i+iGXkxHFeDmWL9NUedP1eD9vq/skfpdn16n0527n3J8VeRpmPcqq555qm3HP+qyfELoWo7l6Pbg0bScWvKzr1imbNqnzrmmumriP0ie3+/Ct6K6bqWj9K9uaXrGNVi5+Ng27d61VMTNFUR5Tx68cAzMI8gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB5ZeRZxcevIyLlFq1bpmquuurimmmPOZn0h56nm2NO0/Iz8qvwWMe3VduVe1NMczLWDM/xx8RO5buPj3K9C6eYmRxVciZivL4mfLjmKqvt5U/kE8bK6j7Q3rq2o6ZtrVqc+/p0UzfmiirwTFU8RNNXHFXeOO3+/L16pbd1jdG1bmk6HuLJ0DMuVxMZVmJ708TE0zxMT6xPaeeYenTvY+29iaNGmbc0yziW5iJu3Ip5uXqojjxV1edU/wBvRk8g1un4YsrKr+ZqnU/cGXdnjxVxTMRP71z7R+36RnXRrpJkdPNYy82vemsazYv4/wAmnEyZ4t0zzEzXP1TzV249POfPlK3BwCxb81vM27tLUNa0/R8nWMnFt+OjCx/57veI4jtPlzz5T2ifNgfS/r5svel+nTci7XoWsfy1YedPg8VXtTXPETP2nifslnhHHVfo3s3qHj1XNRwqcPVIjm3qGNEU3Ynt/N/mjt5SCSBF3QrbG/8AaOLnaJuvW7Gs6ZZqiNNvzVVN2KeZ+mfF34495n7JRAABxPYQ38YuuZWh9G79WHfrtXsvMs40TTPEzEzNUx+1Mx+qSdiWsmzsvRLeZcruZFOBZi7VXPNU1eCOeefXkF8CPIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABG/xIb0nY/SrU9Tx7ngzsmn+Ew5iqYmLlfbxRx7U+KfzEAkPxWsi3VEeC5RPNNXlMT7w6YWLjYWPTjYePax7NH8tu1RFNMfiI7Qjn4ZtrZe1Okel42oXb1zMzYnOvRcrmrwTc7xTHPlxHHP35SaDkAAAAAHHCIOsXVLWum++NDr1HRqL2zc6n5ORm0UzN21e7+XE+URxPEx3jnjyTAsu99taVu7bWZoGs49N/EyqJpnmOZonieKqfaqPOJBcNNzsXUcGznYN+3kYt+iLlq7bnmmumfKYlVNcvhy1Dcmwt+5/RzctN+/i2oryNGy5onw1W4mZnvP9NXeY9piYbGg14+LvGzdf1vp/tDHx7tePqGreO/cpomaYiPDT3n7RVVP/hsLaoi3bpopjiKY4iPZxXboq48VNNXHlzHk7gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIF+Jva2vb03psHQ8PS8nK0WM+q7qF61TM0W4iaInxz6fT4+J7ecwnoB0ppimmKaY4iI4h3jyAAAAAAAAkAefyrfzYuzRT46YmIq47xE+f9oY11U3Vj7L2Dq25L8xziWJmzRM9q7s9qKf1qmGUtJeo+yt05fXm707y9w5FWia7qtOocXr0zzTPinxfV5zETVT27cxH6BsN8Mdzc+Z0txdX3VqeTn5mp368u1N6rmbdqqfpiPtPEzEenPslSFNp+JYwMDHwcW3Fuxj2qbVuiPKmmmOIj9oVIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAvio13Vdpbj2HufGycijAx9Qqt5VNF+aKauZpniqI7TzTFXnHun1gnXjZkb76Y6toNuiKsubXz8Pn0v0d6Y/XvT/wC4Gb2L1F6zbvW55prpiqPxL0RZ8MOv6vrnSbAta5hZWNn6XVOn3Jv0eGbkW4iKao9/pmmJ+8SlKAcgAAAAAAtO7dxaTtbb+Xrut5VGLg4tHiuV1T3n2iPeZ9IBX38vHsXbdq9ftW7l2eLdNdcRNc+0R6yhL4tNp6xm6LpG8tr4V3J1vRcqjmLFHiufKmqJ8VMcd5prpp/SZnyhivTDC1rrZ1Up6na1Zv4O2tHvcaNizE0zcqpntP344iap9Z4iPJs8Cg0PJycvRsLLzMevGv3sei5ds1+duqaeZpn8Sr4OCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAedddNETXXVFNMRzNVU8RH5lR6HrOk65hfxujaliahjeKafm412LlPijzjmFXk2beRYrsXqIrt3KZprpnyqiY4mJaybm2VvPoduW/u/ptRkarte/V48/R6qprminjvxHeZiO8xVEcx68wK2gEf9I+q+1upOBVXo965Yz7VEVZOBfji7a9J+1Uc+sfby54SBEiAAA6XrlFq3VcuV00UUxzVVVPERHvMob6l/EJtXbd6dJ25bu7o1yuv5dGPhR4rdFXPHFVcf2pif0BM6MOs/SmrqVquh0524cjE0TBuTcy9Pot8xkzzExPi5jifOO8Tx6eaj6HYHVPI1TUNz7/ANSizjZ9vjG0iaYicb6uYqmImYpnjmPOZn14lLcwCh0jTcLSNNsabpuNaxcPHoi3Zs26eKaKY9FbBw58ga75Oo5+0PjIpsZedkTpm6sGmmzRcuTNFFdNMxERHPb67c8f+tsPDX34wtC1KLW0t56Nh3srL0bU6Irt2aJqqmmqYqpniIn+qnj2+pP2Nc+bYt3Zpmma6Iq4nzjmAeoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALFo+0ds6Pr2Zrul6JhYeo5tPhyL9m3FNVcc8+nvPeffiOXh1Hy904O0czK2Zp2NqOt2/DOPj5Ffhor7xzz3jnt6cwyQkGuWP1Z65YmRRj6n0euXa/FFNVyxFyKJ+/MeKOGX9Jt9dTty7ouY26OntWg6PFmqqnKrqqpqiuJjiOKv5ue/pH59EvALZubRsTcO387RM+bsYudYqsXptV+Cvw1RxPE+jFunXSfZWw7cVaFpVE5cxxVmZH/ABL8+/1T5R9o4Z4SAAAADjg4+61bxvX8bamr5OLcm3fs4N65aqjzpqiiZif3Rx8Ju5NT3R0mt5+rZ+TnZNvNvWfnZFfjrmmOJiPF6+f+3oCXQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHqJkfwuxNdyZ54tadfr7efa3V5fdFXwR2KrPROi5McRf1G/cp9uPpp/8Aqm7KsWsmxXYv26Ltq5TNNdFcc01RPnEx6w8NJ03A0nAt4GmYdjDxbXMW7NiiKKKeZ5niI7eczP6grAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARp8RO+tR2PsSL+iYORlavqN6MLC+XbmqLdyqJnxz6cxx2j1n9QY7ndR9w658RWFsbaN2zVpGm26q9bu/LiqJmI708zHaaeaY7T5zPsmxE/w29Na9h7UrzNYp+ZuPVqoydQuTV4ppmeZijn145mZn1mZSzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIl67dY8LYVNvRNIxo1jdWZEU42DbqmZt+LtFVfEc/inzkGc69vXbOha1p2i6tq2Pi6hqVcUYmPXM+K5VMxEeUdomZ45njuv1dMVceKmJ4nmOY8pQP0P6QanGux1I6mZF3Udz5E/Nx8e9V46cP2+3ij0iO1PonvzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAfW/qlqmo7jjpb02prytfyom3mZlmPFGJHHenn0n3q7xT+fIJvwdU07ULuRawM/GyrmLc+XkU2rkVTar/y1RHlP2la69m7XubujdtzRcSvXKaPlxmVUc1xTxx29Inj18/uxzoX0xweme2a8O3kV5mpZkxc1DJqqni5c79qY9KY57f/ALiQwcgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAs+9Nw4G1dsZ+4NTr8OLhWKrtfExE1ceVMc+szxEfkF0ybfzbNdqappiumaZmnzjn2YH0o6Uba6cxn3dJ/iMrNzrk1XsvKqiu7NMzz4OYiO391D8Om7t1742Zf3HufExsajJyq/4CmzbmjmzHbmeZnnvExz68JOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa7/E7mZ+8d67a6RaTcmIz79GRqNUf02o5nv6doiZ+8zDYhQzpWmzq8avOBizqEWvkxlfKj5sW+efD4/PjnvwDnQtMw9G0fE0rAs02cXEs02bVFMdqaaY4j+ytAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGBdft4ZGxulura/hXKLebRRTaxZqjmPmV1REdvXjvP6Ln0nztY1TpvoGqa9epvall4Nu9frppimKpqjmJ4jtHaY8uEQfG9lV39t7X25b8XzNS1aJ4pn0pp8Pl+bkfs2A03Gt4WnY2HZoii3YtU26aY8oiI4iP9AVIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALJuPa239xZem5et6Vj517TL/AM/DruxzNmvt3j9o7T7R7LyjLqj1MyNmdQtnbdo0u1lY+4MmbF+9NyYrtR4qKYmmI+9XM8+kdkngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACj1nU8HR9Ou6jqeVaxcSzETdvXavDTREzERzP5mHlo+uaNrFmL+k6phZ1qf68e/Tcj94kEDfGNbs4GpbA3Ndm5FOn6vxM0xE8c1W6ojvx/kn1/7bD27kV0U10+VVMVR+JYn1V2BovUbblrRNbuZNqzayaMm3cx6oprpqpiY7TMT2mJmP/C8arqmkbY0KrN1bPtYWBh2oiu9fr4iIiOI7+sz7Au01cd58vWWJaD1C2/r+9s3auiXpz7+n2fmZt+1/yrNXi4pt+LyqqnvPby8M/hql13+JPUdyVZGg7PpuYOi1827+RV9N/Jj7THeimfbzn1454Sp8DW3reB0+1HcXy7tNerZfho+ZPMzbt8xE8+v1TX+wNhwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeOdjWM3EvYmVaovY9+3Vbu2645iumqOJiftMcw0C+IXpvq3Snek5WiZGZa0XNuTcwMm3XVTNqfObUzH9Uek+33fQNjfUnZ2kb62ll7d1mzTXYvxzRXxzVZuRE+Gun7xz/ePUGg+2uuHVDQfDTibszb9un/p5cxfjj2+vmY/dbuqHVPeHUTItV7g1GfkWoiKMSxzRYieP5vBzxNU+sz/pC19Rto6tsXd2bt3WLM03se5MUXePovUeldPvE+f2Y6K6001V1RTTHMzPER68vp10j29TtXptoOgxbiivFwrfzoif+rVHirn/AOUy+f8A0F29/ijq9t3SqqPHanLpv3omOY8Fv66on8xTMfq+lUUxEcQI5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEvxJ9JsfqTtaL2Dbop1/T6aqsK5MxHzOeObdU+08Rx7T+ZfPrMx8jDzL2JlWa7N+zXNFy3XHFVNUdpiY931far/ABjdHqsyzc6hbbxecizRzq1i3T2rop5n50R7xH832iJ9AY78BO3f4rdmt7lu2/owsanHs1TH9Vyeapj8RT/q3KhC/wAG23Z0Lovh5V2iacjVb9eZXzzz4Z+mn94p5/VNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADpdtUXbdVu5TTXRXTNNVNUcxMS7gKfTsPG0/Cs4WHZt2MexRFFq3RTxTTTHlEQqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//2Q==" alt=""></div>
+  <div class="section">
+    <p class="section-label">Common Mistakes</p>
+    <h2>How people <em>waste</em> the massage</h2>
+    <div class="mistake"><span class="mistake-x">✗</span><div><div class="mistake-title">Treating the navel like a port</div><p class="mistake-desc">People drip oil into the belly button and wait for it to reach the liver. The navel is a sealed scar on closed ligaments, so the drops just sit on skin while the actual work (the rubbing) gets skipped.</p></div></div>
+    <div class="mistake"><span class="mistake-x">✗</span><div><div class="mistake-title">Drinking castor oil to detox</div><p class="mistake-desc">People move on from the navel to swallowing the oil, assuming more contact means more cleansing. Swallowed, it is a strong laxative, and in pregnancy it can set off contractions.</p></div></div>
+    <div class="mistake"><span class="mistake-x">✗</span><div><div class="mistake-title">Rubbing in random circles</div><p class="mistake-desc">People massage whichever way feels nice, or the wrong way around. The method follows the colon (up the right, across, down the left), and going against that route throws away the logic the technique is built on.</p></div></div>
+    <div class="mistake"><span class="mistake-x">✗</span><div><div class="mistake-title">Quitting after a few sessions</div><p class="mistake-desc">People try it twice, feel nothing dramatic, and call it a fad. The trial result came from 4 weeks, so a few days tells you nothing about whether it works for you.</p></div></div>
+    <div class="mistake"><span class="mistake-x">✗</span><div><div class="mistake-title">Using oil to sit on a red flag</div><p class="mistake-desc">People keep oiling through weeks of bloating, blood or weight loss because the ritual feels like doing something. That delay is the real cost, because those symptoms need a GP, not a routine.</p></div></div>
+    <div class="mistake"><span class="mistake-x">✗</span><div><div class="mistake-title">Paying for special navel blends</div><p class="mistake-desc">People buy pricey oils marketed for the belly button. On skin, the oil is only lubricant and moisturizer, so any oil that glides does the same job for the part that matters.</p></div></div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>This guide is based on published research, not medical advice. For constipation, bloating that lasts more than 3 weeks, or any change in your bowel habits, see your GP or a gastroenterologist.</p>
+  <span class="footer-brand">Subscribe to Dr. Painkill.</span>
+</div>
+
+</body>
+</html>
